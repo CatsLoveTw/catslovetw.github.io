@@ -3,6 +3,25 @@ body {
     padding: 0;
     margin: 0;
 }
-.text {
-    color:goldenrod
+.lists { 
+  list-style-type:none; /*list樣式 none*/
+  margin: 0; 
+  padding: 0; /*設定範圍*/
+  overflow: hidden; /*顯示background*/
+  background-color:rgb(57, 57, 57);
+  left: 0px;
+  top: 0px;
+  list-style-position: inside;
+  position: sticky;
+  display: block;
+}
+.lists-link {
+    display: block;
+    background: gray;
+    color: aliceblue;
+    text-align: center;
+    padding: 11px; /*大小*/
+    display: inline; /*在lists內*/
+    float: left; /*靠左*/
+    text-decoration: none; /*消除底線*/
 }
