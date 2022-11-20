@@ -25,3 +25,10 @@ body {
     float: left; /*靠左*/
     text-decoration: none; /*消除底線*/
 }
+
+footer {
+  background-color: #777;
+  padding: 9px;
+  text-align: center;
+  color: grey;
+}
