@@ -11,13 +11,20 @@ try {
 const pages = {
   "href": {
     "首頁": {
-      "path":"../../index.html"
+      "path":"../../index.html",
+      "title":"網站首頁"
     },
     "測試用網頁": {
-      "path":"../錯誤/errorwebsite.html" // ../測試用網頁/testhub.html
+      "path":"../錯誤/errorwebsite.html", // ../測試用網頁/testhub.html
+      "title":"測試用"
     },
     "關於": {
-      "path":"../關於/infoIndex.html"
+      "path":"../關於/infoIndex.html",
+      "title":"想了解我?"
+    },
+    "...": {
+      "path":"../錯誤/errorwebsite.html",
+      "title":"其他"
     }
   }
 }
@@ -32,8 +39,7 @@ if (getTitle.innerHTML == "首頁") {
     } else {
       index = `./htmls/${pages.href[i].path.split("../")[1]}`
     }
-    console.log(index)
-    pathes += `<li><a href="${index}">${i}</a></li>`
+    pathes += `<li><a href="${index}" title="${pages.href[i].title}">${i}</a></li>`
   }
   menu.innerHTML = `
   <div class="container">
@@ -53,7 +59,7 @@ if (getTitle.innerHTML == "首頁") {
     if (i == getTitle.innerHTML) {
       index = "#"
     }
-    pathes += `<li><a href="${index}">${i}</a></li>`
+    pathes += `<li><a href="${index}" title="${pages.href[i].title}">${i}</a></li>`
   }
   menu.innerHTML = `
   <div class="container">

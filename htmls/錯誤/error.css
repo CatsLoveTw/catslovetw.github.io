@@ -13,6 +13,7 @@ a {
 }
 
 .container .h {
+  font-size: 25px;
   transform: translateY(25%);
 }
 
@@ -75,6 +76,7 @@ label {
 }
 
 .main-menu li a {
+  font-size: 12px;
   padding: 0 15px;
   /* 邊距 (y=0) (x=15px) */
   line-height: 60px;
@@ -133,6 +135,7 @@ label {
 .error {
   width: auto;
   height: 350px;
+  font-size: 13px;
   background-color: #777;
   text-align: center;
   margin: -21 0 0 0;
@@ -147,7 +150,7 @@ label {
   height: auto;
   width: auto;
   transform: translateY(50%);
-  font-size: 120px;
+  font-size: 100px;
   color: transparent;
   -webkit-text-stroke: 1.5px rgb(0, 0, 0);
 }

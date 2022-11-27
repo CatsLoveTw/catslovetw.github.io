@@ -21,7 +21,7 @@ body {
 }
 
 .container .h {
-  font-size: 30px;
+  font-size: 25px;
   transform: translateY(25%);
 }
 
@@ -150,6 +150,7 @@ label {
 }
 
 .main-menu li a {
+  font-size: 12px;
   padding: 0 15px;
   /* 邊距 (y=0) (x=15px) */
   line-height: 60px;
