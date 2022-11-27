@@ -4,141 +4,13 @@ body {
   margin: 0;
 }
 
-a {
-  display: block;
-  text-decoration: none;
-  /*消除底線*/
-  color: bisque;
-  /*字體顏色 ("color")*/
-}
-
-.container .h {
-  font-size: 25px;
-  transform: translateY(25%);
-}
-
-label {
-  display: none;
-}
-
-#navbarToggle {
-  display: none;
-  /*不顯示 (靠label checked) */
-}
-
-.main-header {
-  width: 100%;
-  /*寬度100%*/
-  height: 85px;
-  background-color: gray;
-  /*背景顏色*/
-  position: relative;
-  transform: translateY(0);
-  /*預設 / 如果navbarToggle未激活 Y設為-100%*/
-  transition: 1s;
-  /*帶動Y=0 / Y=-100%時 動畫時間=1s*/
-}
-
-.container {
-  width: 100%;
-  /*寬度 視窗寬度(100%)*/
-  margin: auto;
-  /*邊距 (自動調整)*/
-  display: flex;
-  /*配合*/
-  justify-content: space-between;
-  /*對齊 (靠左/右)*/
-}
-
-.main-header h1 {
-  line-height: 60px;
-  /*高度*/
-  margin: 0 15px;
-  /*邊距 上=0 右=15px*/
-}
-
-.main-menu {
-  display: flex;
-  /*排版 (右)*/
-  position: relative;
-}
-
-.main-menu li {
-  list-style-type: none;
-  /*list樣式 none (消除黑點)*/
-  position: relative;
-  transition: .5s;
-}
-
-.main-menu li:hover {
-  background-color: #919191;
-  /*滑鼠移動到main-menu <li> 設定為深紅色*/
-}
-
-.main-menu li a {
-  font-size: 12px;
-  padding: 0 15px;
-  /* 邊距 (y=0) (x=15px) */
-  line-height: 60px;
-  /*高度*/
-}
-
-.main-menu>li::before {
-  content: '';
-  position: absolute;
-  /*絕對定位 (會根據視窗大小改變)*/
-  height: 4px;
-  /*厚度 (長度)*/
-  left: 50%;
-  /*橫槓從中間擴散*/
-  right: 50%;
-  /*橫槓從中間擴散*/
-  bottom: 0;
-  /*高度 (類似y)*/
-  background-color: white;
-  /*橫槓收縮時會變"color"*/
-  transition: 0.75s;
-  /*收/擴總時間0.75s*/
-}
-
-.main-menu>li:hover::before {
-  background-color: wheat;
-  left: 0;
-  /*左右邊都設為0 (界線)*/
-  right: 0;
-}
-
-.sub-menu {
-  position: absolute;
-  /*絕對定位 (會根據視窗大小改變)*/
-  background-color: rgba(232, 48, 21, 0.8);
-  /*背景顏色*/
-  width: 150%;
-  /*寬度150%*/
-  text-align: center;
-  /*字體置中*/
-  transform: translateX(-25%);
-  /*X改變-25%*/
-  display: none;
-  /*如果沒有hover就不會顯示*/
-}
-
-.main-menu li:hover .sub-menu {
-  display: block;
-  /*如果滑鼠移動至<li>區域顯示裡面的sub-menu(如果沒有就不會顯示)*/
-}
-
-
-
-
-
 .error {
   width: auto;
   height: 350px;
   font-size: 13px;
   background-color: #777;
   text-align: center;
-  margin: -21 0 0 0;
+  margin: -30 0 0 0;
 }
 
 .errortext {
@@ -160,6 +32,7 @@ footer {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding: 0px;
   font-size: 20px;
+  margin: -67 0 0 0;
   text-align: center;
   background-color: gray;
   color: antiquewhite;
