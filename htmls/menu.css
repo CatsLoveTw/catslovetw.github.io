@@ -129,7 +129,7 @@ label {
   /*邊距 (自動調整)*/
   display: flex;
   /*配合*/
-  justify-content: space-around;
+  justify-content: space-between;
   /*對齊 (靠左/右)*/
 }
 
@@ -141,7 +141,7 @@ label {
 }
 
 .main-menu {
-  display: inline-flex;
+  display: flex;
   margin: 15 0 0 0;
   /*排版 (右)*/
   position: relative;
