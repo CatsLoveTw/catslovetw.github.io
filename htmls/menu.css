@@ -7,9 +7,15 @@ body {
   margin: 0;
 }
 
+
+
 .roots {
   --fontFamily: 'Ubuntu';
   --text-decoration: none;
+}
+
+.container .now {
+  color:#2eec08;
 }
 
 .container a {
@@ -19,6 +25,7 @@ body {
   color: bisque;
   /*字體顏色 ("color")*/
 }
+
 
 .container .h {
   font-size: 25px;
