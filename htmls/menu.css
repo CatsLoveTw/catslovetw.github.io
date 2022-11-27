@@ -19,6 +19,7 @@ body {
 }
 
 .container a {
+  white-space:nowrap;
   display: block;
   text-decoration: none;
   /*消除底線*/
@@ -28,7 +29,8 @@ body {
 
 
 .container .h {
-  font-size: 25px;
+  font-size: 20px;
+  white-space:nowrap;
   transform: translateY(25%);
 }
 
@@ -127,7 +129,7 @@ label {
   /*邊距 (自動調整)*/
   display: flex;
   /*配合*/
-  justify-content: space-between;
+  justify-content: space-around;
   /*對齊 (靠左/右)*/
 }
 
@@ -139,7 +141,8 @@ label {
 }
 
 .main-menu {
-  display: flex;
+  display: inline-flex;
+  margin: 15 0 0 0;
   /*排版 (右)*/
   position: relative;
 }
