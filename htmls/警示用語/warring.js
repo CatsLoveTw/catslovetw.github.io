@@ -12,4 +12,7 @@ if (!url) {
 }
 link.item(0).innerHTML = url
 
+if (window.location.href.split("#")[1] == "back") {
+    history.go(-2)
+}
 
