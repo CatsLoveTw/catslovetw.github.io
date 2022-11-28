@@ -16,17 +16,18 @@ function transfer (text) {
 
 }
 
+
+// "測試用網頁": {
+//   "path":"../錯誤/errorwebsite.html#測試用網頁", // ../測試用網頁/testhub.html
+//   "settitle":"測試用",
+//   "title":"測試用網頁"
+// },
 const pages = {
   "href": {
     "首頁": {
       "path":"../../index.html",
       "settitle":"網站首頁",
       "title":"首頁"
-    },
-    "測試用網頁": {
-      "path":"../錯誤/errorwebsite.html#測試用網頁", // ../測試用網頁/testhub.html
-      "settitle":"測試用",
-      "title":"測試用網頁"
     },
     "關於": {
       "path":"../關於/infoIndex.html",
@@ -39,7 +40,7 @@ const pages = {
       "title":"傳送門",
       "submenu": { // 因為架構改變 submenu可以視為更多傳送點。 (只會顯示於傳送門處)
         "敬請期待...": {
-          "path":"#",
+          "path":"",
           "settitle":"敬請期待...",
           "title":"敬請期待"
         }
@@ -56,17 +57,17 @@ if (getTitle.innerHTML == "首頁") {
     let index = ""
     let display = i
     if (i == "首頁") {
-      index = "#"
-      pathes += `<li><a class="now" href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+      index = ""
+      pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
     } else {
       index = `./htmls/${pages.href[i].path.split("../")[1]}`
-      pathes += `<li><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+      pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
     }
       
 }
   menu.innerHTML = `
   <div class="container">
-    <h1><a href="#" class="h">${getTitle.innerHTML}</a></h1>
+    <h1><a href="" class="h">${getTitle.innerHTML}</a></h1>
     <nav>
       <ul class="main-menu">
         ${pathes} 
@@ -80,16 +81,16 @@ if (getTitle.innerHTML == "首頁") {
   for (let i in pages.href) {
     let index = pages.href[i].path
     if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
-      index = "#"
-      pathes += `<li><a class="now" href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+      index = ""
+      pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
     } else {
-      pathes += `<li><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+      pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
   }
 }
 
   menu.innerHTML = `
   <div class="container">
-    <h1><a href="#" class="h">${getTitle.innerHTML}</a></h1>
+    <h1><a href="" class="h">${getTitle.innerHTML}</a></h1>
     <nav>
       <ul class="main-menu">
         ${pathes}  
@@ -116,7 +117,7 @@ try {
   for (let i in pages.href) {
     let index = pages.href[i].path
     if (pages.href[i].title == getTitle.innerHTML) {
-      index = "#"
+      index = ""
     }
     if (!pages.href[i].submenu) {
       pathes += `<li class="list"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
