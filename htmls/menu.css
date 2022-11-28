@@ -14,9 +14,24 @@ body {
   --text-decoration: none;
 }
 
-.container .now {
-  color:#2eec08;
+.main-menu .now::before {
+  content: '';
+  position: absolute;
+  /*絕對定位 (會根據視窗大小改變)*/
+  height: 4px;
+  /*厚度 (長度)*/
+  left: 0%;
+  right: 0%;
+  bottom: 0;
+  /*高度 (類似y)*/
+  background-color: #16d02e;
+  /*橫槓收縮時會變"color"*/
 }
+.main-menu .now a {
+  color: #16d02e;
+}
+
+
 
 .container a {
   white-space:nowrap;
@@ -167,16 +182,15 @@ label {
   /*高度*/
 }
 
-.main-menu>li::before {
+.main-menu>.after::before {
   content: '';
   position: absolute;
   /*絕對定位 (會根據視窗大小改變)*/
   height: 4px;
   /*厚度 (長度)*/
   left: 50%;
-  /*橫槓從中間擴散*/
   right: 50%;
-  /*橫槓從中間擴散*/
+  /*橫槓收縮至50 50(消失)*/
   bottom: 0;
   /*高度 (類似y)*/
   background-color: white;
@@ -185,10 +199,10 @@ label {
   /*收/擴總時間0.75s*/
 }
 
-.main-menu>li:hover::before {
+.main-menu>.after:hover::before {
   background-color: wheat;
   left: 0;
-  /*左右邊都設為0 (界線)*/
+  /*伸長至 0 0 (一整格)*/
   right: 0;
 }
 
