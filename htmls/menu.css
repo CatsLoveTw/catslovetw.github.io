@@ -26,6 +26,7 @@ body {
   /*高度 (類似y)*/
   background-color: #16d02e;
   /*橫槓收縮時會變"color"*/
+  
 }
 .main-menu .now a {
   color: #16d02e;
@@ -175,6 +176,7 @@ label {
 }
 
 .main-menu li a {
+  font-weight: bold;
   font-size: 12px;
   padding: 0 15px;
   /* 邊距 (y=0) (x=15px) */
