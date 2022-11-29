@@ -8,6 +8,30 @@
     font-size: 40px;
 }
 
+.subtitle a {
+    text-decoration: none;
+    color: rgb(136, 187, 245);
+    margin: 10px 0 10px 0;
+    font-size: 40px;
+}
+
+.server a:hover::after {
+    position: relative;
+    content: ' 1個月:30天';
+    color: rgb(136, 136, 136);
+    font-size: 17.5px;
+    bottom: 10px;
+    left: 10px;
+}
+.server a::after {
+    position: relative;
+    content: ' 1個月:30天';
+    color: rgb(199, 196, 196);
+    font-size: 17.5px;
+    bottom: 10px;
+    left: 10px;
+}
+
 timetext {
     position: relative;
     font-size: 21.5px;

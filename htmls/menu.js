@@ -106,7 +106,7 @@ getTitle.innerHTML = ""
 
 // footer
 const footer = document.getElementById("footer")
-footer.innerText = `©${year} 此網站由貓咪建立`
+footer.innerText = footer.innerText.replace("text", `©${year} 此網站由貓咪建立`)
 
 
 // 傳送門專用
