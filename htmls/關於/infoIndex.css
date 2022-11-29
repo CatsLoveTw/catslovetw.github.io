@@ -3,16 +3,33 @@
 }
 
 .subtitle {
-    margin: 0 0 10px 0;
+    color: rgb(136, 187, 245);
+    margin: 10px 0 10px 0;
     font-size: 40px;
 }
 
-.text {
-    margin: 0 0 0 3;
+timetext {
+    position: relative;
+    font-size: 21.5px;
+    color: rgb(26, 224, 208);
+}
+
+.time {
+    color:rgb(84, 206, 13);
+    margin: 0 0 0 3px;
     font-size: 25px;
 }
 
-.text a {
+.b {
+    color: rgb(175, 175, 175);
+}
+
+.link {
+    margin: 0 0 2.5px 3px;
+    font-size: 23px;
+}
+
+.link a {
     color: goldenrod;
     text-decoration: none;
 }
