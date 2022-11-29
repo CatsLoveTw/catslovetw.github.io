@@ -131,7 +131,6 @@ try {
         subpathes += `<li class="list"><a href="${subindex}" title="${sub[f].settitle}">${f}</a></li>`
       }
       pathes += subpathes
-      console.log(pathes)
     }
   }
   por.innerHTML = `
