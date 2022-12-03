@@ -1,4 +1,3 @@
-
 /**
  * 目前年分
  */
@@ -15,6 +14,21 @@ function transfer (text) {
   return false
 
 }
+
+// 連結處理
+try {
+  const urls = document.getElementsByClassName("url")
+  for (let i = 0; i < urls.length; i++) {
+      let url = urls.item(i).classList.item(1)
+      if (url != null) {
+      let outer = urls.item(i).outerHTML
+      urls.item(i).outerHTML = outer.replace('href="', `href="../警示用語/warring.html###${url}`)
+    } else {
+      let outer = urls.item(i).outerHTML
+      urls.item(i).outerHTML = outer.replace('href="', 'href="../錯誤/errorwebsite.html')
+    }
+  }
+} catch (e) {console.log(e)}
 
 
 // "測試用網頁": {
