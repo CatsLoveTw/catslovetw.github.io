@@ -22,7 +22,9 @@
     font-size: 17.5px;
     bottom: 10px;
     left: 10px;
+    cursor: default;
 }
+
 .server a::after {
     position: relative;
     content: ' 1個月:30天';
