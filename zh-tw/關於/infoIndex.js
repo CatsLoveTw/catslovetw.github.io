@@ -17,7 +17,7 @@ if (c_sec < 10) {
 nowtime = `${nowtime.split(" ")[0]} ${c_hour}:${c_minute}:${c_sec}`
 
 let Rdate = "2022/12/3"
-let Rtime = "14:32:32"
+let Rtime = "22:57:23"
 
 let times = document.getElementsByClassName("time")
 times.item(1).innerHTML = times.item(1).innerHTML.replace("[date]", Rdate)

@@ -14,25 +14,16 @@ body {
   --text-decoration: none;
 }
 
-.main-menu .now::before {
-  content: '';
-  position: absolute;
-  /*絕對定位 (會根據視窗大小改變)*/
-  height: 4px;
-  /*厚度 (長度)*/
-  left: 0%;
-  right: 0%;
-  bottom: 0;
-  /*高度 (類似y)*/
-  background-color: #16d02e;
-  /*橫槓收縮時會變"color"*/
-  
+.container {
+  width: 100%;
+  /*寬度 視窗寬度(100%)*/
+  margin: auto;
+  /*邊距 (自動調整)*/
+  display: flex;
+  /*配合*/
+  justify-content: space-between;
+  /*對齊 (靠左/右)*/
 }
-.main-menu .now a {
-  color: #16d02e;
-}
-
-
 
 .container a {
   white-space:nowrap;
@@ -45,42 +36,22 @@ body {
 
 
 .container .h {
-  font-size: 20px;
-  white-space:nowrap;
-  transform: translateY(25%);
-}
-
-.main-header {
-  width: 100%;
-  /*寬度100%*/
-  height: 85px;
-  background-color: gray;
-  /*背景顏色*/
   position: relative;
-  transform: translateY(-100%);
-  /*預設 / 如果navbarToggle未激活 Y設為-100%*/
-  transition: 1s;
-  /*帶動Y=0 / Y=-100%時 動畫時間=1s*/
+  color:rgb(255, 195, 83);
+  font-size: 20px;
+  white-space: nowrap;
+  bottom: -15px;
 }
 
-.body {
-  font-family: var(--fontFamily);
-}
-
-
-
-
-
-
-
-
-#navbarToggle {
-  display: none;
-  /*不顯示 (靠label checked) */
-}
-
-#navbarToggle:checked~.main-header {
-  transform: translateY(-10%)
+.container .h::after {
+  position: absolute;
+  content: 'may not fully translate';
+  color:#ff000d;
+  font-size: 10px;
+  white-space: nowrap;
+  left: 0%;
+  right: 0%;
+  bottom: -20px;
 }
 
 /* .body {
@@ -94,11 +65,18 @@ body {
   transform: translateY(-100%);
 } */
 
+#navbarToggle {
+  display: none;
+  /*不顯示 (靠label checked) */
+}
+
+#navbarToggle:checked~.main-header {
+  transform: translateY(-10%)
+}
+
 #navbarToggle:checked~footer {
   transform: translateY(250%);
 }
-
-
 
 label {
   color: #fff;
@@ -137,16 +115,17 @@ label {
   /*如果navbarToggle is checked - 轉動 material-icons 1260度*/
 }
 
-
-.container {
+.main-header {
   width: 100%;
-  /*寬度 視窗寬度(100%)*/
-  margin: auto;
-  /*邊距 (自動調整)*/
-  display: flex;
-  /*配合*/
-  justify-content: space-between;
-  /*對齊 (靠左/右)*/
+  /*寬度100%*/
+  height: 85px;
+  background-color: rgb(128, 128, 128);
+  /*背景顏色*/
+  position: relative;
+  transform: translateY(-100%);
+  /*預設 / 如果navbarToggle未激活 Y設為-100%*/
+  transition: 1s;
+  /*帶動Y=0 / Y=-100%時 動畫時間=1s*/
 }
 
 .main-header h1 {
@@ -208,13 +187,51 @@ label {
   right: 0;
 }
 
+.main-menu .now::before {
+  content: '';
+  position: absolute;
+  /*絕對定位 (會根據視窗大小改變)*/
+  height: 4px;
+  /*厚度 (長度)*/
+  left: 0%;
+  right: 0%;
+  bottom: 0;
+  /*高度 (類似y)*/
+  background-color: #16d02e;
+  /*橫槓收縮時會變"color"*/
+  
+}
+.main-menu .now a {
+  color: #16d02e;
+}
+
+
+.body {
+  font-family: var(--fontFamily);
+}
+
+.language {
+  color: rgb(10, 10, 10);
+  width: auto;
+  font-weight: bold;
+  position: relative;
+  left: 80%;
+  height: 25px;
+  bottom: -70px;
+}
+
 footer {
+  position: relative;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   transform: translateY(0);
   transition: 1.15s;
-  padding: 0px;
-  font-size: 20px;
+  padding-right: 20;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 16px;
   text-align: center;
+  bottom: -100px;
   background-color: gray;
   color: antiquewhite;
 }
+

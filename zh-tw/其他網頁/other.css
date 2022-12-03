@@ -1,0 +1,52 @@
+.portal {
+    text-align: center;
+    margin: -30 0 -107 0;
+    background-color: rgb(125, 121, 118);
+    position: relative;
+}
+
+.portal li {
+    list-style-type: none;
+    position: relative;
+    transition: .6s;
+}
+
+.portal li:hover {
+    background-color: #b3afaf;
+}
+
+.portal li a {
+    display: block;
+    color: wheat;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+    padding: 0 15px;
+    line-height: 60px;
+  }
+
+.portal>li::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background-color: white;
+    transition: 0.75s;
+}
+
+.portal>li:hover::before {
+    background-color: whitesmoke;
+    left: 0;
+    right: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.list {
+    list-style-type: none;
+}

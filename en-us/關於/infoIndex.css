@@ -1,0 +1,62 @@
+.body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.subtitle {
+    color: rgb(136, 187, 245);
+    margin: 10px 0 10px 0;
+    font-size: 28px;
+}
+
+.subtitle a {
+    text-decoration: none;
+    color: rgb(136, 187, 245);
+    margin: 10px 0 10px 0;
+    font-size: 28px;
+}
+
+.server a:hover::after {
+    position: relative;
+    content: ' 1 month : 30 days';
+    color: rgb(136, 136, 136);
+    font-size: 12px;
+    bottom: 5.5px;
+    left: 10px;
+    cursor: default;
+}
+
+.server a::after {
+    position: relative;
+    content: ' 1 month : 30 days';
+    color: rgb(199, 196, 196);
+    font-size: 12px;
+    bottom: 5.5px;
+    left: 10px;
+}
+
+timetext {
+    position: relative;
+    font-size: 20px;
+    color: rgb(26, 224, 208);
+}
+
+.time {
+    color:rgb(84, 206, 13);
+    margin: 0 0 0 3px;
+    font-size: 25px;
+}
+
+.b {
+    color: rgb(175, 175, 175);
+    font-size: 20px;
+}
+
+.link {
+    margin: 0 0 2.5px 3px;
+    font-size: 23px;
+}
+
+.link a {
+    color: goldenrod;
+    text-decoration: none;
+}

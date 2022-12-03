@@ -36,26 +36,28 @@ try {
 //   "settitle":"測試用",
 //   "title":"測試用網頁"
 // },
+
+// menu
 const pages = {
   "href": {
-    "首頁": {
-      "path":"../../index.html",
-      "settitle":"網站首頁",
-      "title":"首頁"
+    "home": {
+      "path":"../index.html",
+      "settitle":"website home",
+      "title":"home"
     },
-    "關於": {
+    "info": {
       "path":"../關於/infoIndex.html",
-      "settitle":"想了解我?",
-      "title":"關於"
+      "settitle":"want to know me?",
+      "title":"Info"
     },
     "...": {
       "path":"../其他網頁/other.html",
-      "settitle":"其他網頁",
-      "title":"傳送門",
+      "settitle":"other page",
+      "title":"portal",
       "submenu": { // 因為架構改變 submenu可以視為更多傳送點。 (只會顯示於傳送門處)
-        "敬請期待...": {
+        "To be continued...": {
           "path":"",
-          "settitle":"敬請期待...",
+          "settitle":"To be continued...",
           "title":"敬請期待"
         }
       }
@@ -65,16 +67,16 @@ const pages = {
 try {
 const menu = document.getElementsByClassName("main-header").item(0)
 const getTitle = document.getElementsByClassName("title").item(0)
-if (getTitle.innerHTML == "首頁") {
+if (getTitle.innerHTML == "home") {
   let pathes = ""
   for (let i in pages.href) {
     let index = ""
     let display = i
-    if (i == "首頁") {
+    if (i == "home") {
       index = ""
       pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
     } else {
-      index = `./htmls/${pages.href[i].path.split("../")[1]}`
+      index = `./${pages.href[i].path.split("../")[1]}`
       pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
     }
       
@@ -118,9 +120,20 @@ getTitle.innerHTML = ""
 } catch {}
 
 
-// footer
-const footer = document.getElementById("footer")
-footer.innerText = footer.innerText.replace("text", `©${year} 此網站由貓咪建立`)
+// footer / language
+var footer = document.getElementById("footer")
+footer.outerHTML = `
+  <div class="f" id="f">
+  <footer id="footer">
+    text
+  </footer>
+  <select id="language" class="language" onchange="changeLang(this)">
+            <option value="zh-tw">繁體中文</option>
+            <option value="en-us" selected>English</option>
+          </select>
+  </div>`
+footer = document.getElementById("footer")
+footer.innerText = footer.innerText.replace("text", `©${year} Website created by Cat`)
 
 
 // 傳送門專用

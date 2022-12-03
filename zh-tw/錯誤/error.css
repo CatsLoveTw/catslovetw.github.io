@@ -1,0 +1,38 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.error {
+  width: auto;
+  height: 350px;
+  font-size: 13px;
+  background-color: #777;
+  text-align: center;
+  margin: -30 0 0 0;
+}
+
+.errortext {
+  transform: translateY(200%);
+  margin: 20 0 0 0;
+}
+
+.t {
+  height: auto;
+  width: auto;
+  transform: translateY(50%);
+  font-size: 100px;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+}
+
+
+footer {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  margin: -102 0 0 0;
+  text-align: center;
+  background-color: gray;
+  color: antiquewhite;
+}
