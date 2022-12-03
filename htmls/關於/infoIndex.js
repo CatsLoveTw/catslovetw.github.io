@@ -70,7 +70,7 @@ while (b_m >= 60) {
     b_h++
 }
 while (b_h >= 24) {
-    b_h -= 60
+    b_h -= 24
     b_d++
 }
 while (b_d >= 30) {
