@@ -55,6 +55,11 @@ const pages = {
       "settitle":"其他網頁",
       "title":"傳送門",
       "submenu": { // 因為架構改變 submenu可以視為更多傳送點。 (只會顯示於傳送門處)
+        "光遇計算機": {
+          "path":"../錯誤/errorwebsite.html",
+          "settitle":"光遇計算機",
+          "title":"光遇計算機"
+        },
         "敬請期待...": {
           "path":"",
           "settitle":"敬請期待...",
