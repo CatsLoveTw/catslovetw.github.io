@@ -15,6 +15,12 @@
     font-size: 28px;
 }
 
+.sst {
+    color:rgb(84, 206, 13);
+    margin: 0 0 0 3px;
+    font-size: 25px;
+}
+
 .server a:hover::after {
     position: relative;
     content: ' 1 month : 30 days';
@@ -32,6 +38,13 @@
     font-size: 12px;
     bottom: 5.5px;
     left: 10px;
+}
+
+
+version {
+    position: relative;
+    font-size: 25px;
+    color: rgb(26, 224, 208);
 }
 
 timetext {

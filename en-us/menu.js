@@ -127,10 +127,10 @@ footer.outerHTML = `
   <footer id="footer">
     text
   </footer>
-  <select id="language" class="language" onchange="changeLang(this)">
-            <option value="zh-tw">繁體中文</option>
-            <option value="en-us" selected>English</option>
-          </select>
+    <select id="language" class="language" onchange="changeLang(this)">
+      <option value="zh-tw" class="notSelected">繁體中文</option>
+      <option value="en-us" selected>English</option>
+    </select>
   </div>`
 footer = document.getElementById("footer")
 footer.innerText = footer.innerText.replace("text", `©${year} Website created by Cat`)

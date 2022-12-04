@@ -213,14 +213,18 @@ label {
 }
 
 .language {
-  color: rgb(10, 10, 10);
+  color: rgb(0, 60, 255);
   width: auto;
   font-weight: bold;
   position: relative;
   float: right;
   left: auto;
   height: 25px;
-  bottom: -70px;
+  bottom: -72px;
+}
+
+.notSelected {
+  color: #919191;
 }
 
 footer {

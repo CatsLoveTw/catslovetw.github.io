@@ -129,12 +129,11 @@ footer.outerHTML = `
   </footer>
   <select id="language" class="language" onchange="changeLang(this)">
             <option value="zh-tw" selected>繁體中文</option>
-            <option value="en-us">English</option>
+            <option value="en-us" class="notSelected">English</option>
           </select>
   </div>`
 footer = document.getElementById("footer")
 footer.innerText = footer.innerText.replace("text", `©${year} 此網站由貓咪建立`)
-
 
 // 傳送門專用
 try {
@@ -164,3 +163,4 @@ try {
     ${pathes}
   `
 } catch {}
+
