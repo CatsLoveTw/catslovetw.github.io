@@ -10,9 +10,10 @@ function transfer (text) {
   switch (text) {
     case "%E6%B8%AC%E8%A9%A6%E7%94%A8%E7%B6%B2%E9%A0%81":
       return "測試用網頁"
+    case "%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F":
+      return "光遇計算機"
   }
   return false
-
 }
 
 // 連結處理
@@ -137,6 +138,18 @@ footer.outerHTML = `
             <option value="en-us" class="notSelected">English</option>
           </select>
   </div>`
+if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F") != -1) {
+  footer.outerHTML = `
+  <div class="f" id="f">
+  <footer id="footer">
+    text
+  </footer>
+  <select id="language" class="language" onchange="changeLang(this)">
+            <option value="zh-tw" selected>繁體中文</option>
+            <option value="en-us" class="notSelected" disabled>English</option>
+          </select>
+  </div>`
+}
 footer = document.getElementById("footer")
 footer.innerText = footer.innerText.replace("text", `©${year} 此網站由貓咪建立`)
 

@@ -6,6 +6,7 @@
         <meta name="keywords" content="貓咪">
         <meta name="description" content="貓貓ㄉ網站">
         <link rel="stylesheet" href="../menu.css">
+        <link rel="stylesheet" href="./SkyCalc.css">
     </head>
     <body>
         <input type="checkbox" id="navbarToggle" checked="checked">
@@ -13,10 +14,18 @@
           </header>
           <h1 class="title">光遇計算機</h1>
           <div class="body">
-          </body>
+            <h2 style="text-align: center;">光遇計算機</h1>
+            <div class="result">
+              <select class="changeMode" id="changeMode" onchange="changeMode(this.value)">   
+              </select>
+              <p style="margin-right: 120px">選擇模式:</p>
+            </div>
+            </body>
+        </div>
     <footer id="footer">
         text
     </footer>
     <script src="../menu.js"></script>
-    <script src="../../language.js"></script>
+    <!-- <script src="../../language.js"></script> -->
+    <script src="./SkyCalc.js"></script>
 </html>

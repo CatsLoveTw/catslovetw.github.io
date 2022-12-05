@@ -1,4 +1,3 @@
-
 function changeLang (a) {
     console.log("awa")
     // const select = document.querySelector("#language")
