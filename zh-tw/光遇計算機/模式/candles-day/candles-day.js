@@ -61,7 +61,7 @@ function send () {
         let nowtime = v.getFullYear() + "/" + String(v.getMonth() + 1) + "/" + String(v.getDate());
         let now = `${nowtime.split(" ")[0]}`
         
-        result.innerHTML = "總共需要 " + res + " 天 " + "(預計到" + now + ")" + `<br>${list.join("<br>")}`
+        result.innerHTML = "總共需要 " + res + " 天 " + "(預計到" + now + ")"  + `<br>${list.join("<br>")}`
     }
 }
 

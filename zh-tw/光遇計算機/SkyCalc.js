@@ -13,6 +13,7 @@ switch (path) {
             <option value="nope" selected>無</option>
             <optgroup label="普通蠟燭">
             <option value="candles-day">計算所需天數</option>
+            <option value="candles">計算每日所需蠟燭</option>
         </optgroup>` 
         break;
     case "candles-day":
@@ -20,6 +21,15 @@ switch (path) {
             <option value="nope">無</option>
             <optgroup label="普通蠟燭">
             <option value="candles-day" selected>計算所需天數</option>
+            <option value="candles">計算每日所需蠟燭</option>
+        </optgroup>` 
+        break;
+    case "candles":
+        change.innerHTML = `
+            <option value="nope">無</option>
+            <optgroup label="普通蠟燭">
+            <option value="candles-day">計算所需天數</option>
+            <option value="candles" selected>計算每日所需蠟燭</option>
         </optgroup>` 
         break;
 }
@@ -61,6 +71,8 @@ function changeMode (modeID) {
         case "candles-day":
             location.href = url("模式/candles-day/candles-day.html")
             break;
+        case "candles":
+            location.href = url("模式/candles-candles/candles.html")
     }
 }
 
