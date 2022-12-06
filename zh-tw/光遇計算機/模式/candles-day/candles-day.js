@@ -64,3 +64,14 @@ function send () {
         result.innerHTML = "總共需要 " + res + " 天 " + "(預計到" + now + ")" + `<br>${list.join("<br>")}`
     }
 }
+
+function reset () {
+    let result = document.getElementsByClassName("result-text").item(0)
+    let nowCandles = document.getElementById("now_candles")
+    let candles = document.getElementById("candles")
+    let addCandles = document.getElementById("addCandles")
+    result.innerHTML = "無"
+    nowCandles.value = ""
+    candles.value = ""
+    addCandles.value = ""
+}

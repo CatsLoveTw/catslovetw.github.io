@@ -57,7 +57,7 @@ const pages = {
       "title":"傳送門",
       "submenu": { // 因為架構改變 submenu可以視為更多傳送點。 (只會顯示於傳送門處)
         "光遇計算機": {
-          "path":"../錯誤/errorwebsite.html",
+          "path":"../光遇計算機/SkyCalc.html",
           "settitle":"光遇計算機",
           "title":"光遇計算機"
         },
@@ -102,12 +102,21 @@ if (getTitle.innerHTML == "首頁") {
   let pathes = ''
   for (let i in pages.href) {
     let index = pages.href[i].path
-    if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
-      index = ""
-      pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+    if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F/%E6%A8%A1%E5%BC%8F") == -1) {
+      if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
+        index = ""
+        pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+      } else {
+        pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+      }
     } else {
-      pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
-  }
+      if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
+        index = ""
+        pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+      } else {
+        pathes += `<li class="after"><a href="${"../../" + index}" title="${pages.href[i].settitle}">${i}</a></li>`
+      }
+    }
 }
 
   menu.innerHTML = `
@@ -128,7 +137,18 @@ getTitle.innerHTML = ""
 
 // footer / language
 var footer = document.getElementById("footer")
-footer.outerHTML = `
+if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F") != -1) {
+  footer.outerHTML = `
+  <div class="f" id="f">
+  <footer id="footer">
+    text
+  </footer>
+  <select id="language" class="language" onchange="changeLang(this)">
+            <option value="zh-tw" selected>繁體中文</option>
+          </select>
+  </div>`
+} else {
+  footer.outerHTML = `
   <div class="f" id="f">
   <footer id="footer">
     text
@@ -138,17 +158,7 @@ footer.outerHTML = `
             <option value="en-us" class="notSelected">English</option>
           </select>
   </div>`
-if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F") != -1) {
-  footer.outerHTML = `
-  <div class="f" id="f">
-  <footer id="footer">
-    text
-  </footer>
-  <select id="language" class="language" onchange="changeLang(this)">
-            <option value="zh-tw" selected>繁體中文</option>
-            <option value="en-us" class="notSelected" disabled>English</option>
-          </select>
-  </div>`
+
 }
 footer = document.getElementById("footer")
 footer.innerText = footer.innerText.replace("text", `©${year} 此網站由貓咪建立`)

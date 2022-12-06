@@ -7,6 +7,7 @@
         <meta name="description" content="貓貓ㄉ網站">
         <link rel="stylesheet" href="../../../menu.css">
         <link rel="stylesheet" href="../../SkyCalc.css">
+        <link rel="stylesheet" href="./candles-day.css">
     </head>
     <body>
         <input type="checkbox" id="navbarToggle" checked="checked">
@@ -22,19 +23,20 @@
             </div>
             <div class="divs">
                 <p>輸入目前持有蠟燭</p>
-                <input class="input" type="text" id="now_candles">
+                <input class="input c" type="text" id="now_candles">
             </div>
             <div class="divs">
                 <p>輸入目標蠟燭</p>
-                <input class="input" type="text" id="candles">
+                <input class="input c" type="text" id="candles">
             </div>
             <div class="divs">
                 <p>輸入每天增加蠟燭量</p>
-                <input class="input" type="text" id="addCandles">
+                <input class="input c" type="text" id="addCandles">
             </div>
-            <div class="divs">
+            <div class="divs op">
                 <p>操作:</p>
-                <button class="btnOperation" onclick="send()" style="width:100%; height: 35px;">送出</button>
+                <button class="btnOperation send" onclick="send()">送出</button>
+                <button class="btnOperation reset" onclick="reset()">重製</button>
             </div>
             </body>
         </div>
@@ -42,7 +44,7 @@
         text
     </footer>
     <script src="../../../menu.js"></script>
-    <!-- <script src="../../../../language.js"></script> -->
+    <script src="../../../../language.js"></script>
     <script src="../../SkyCalc.js"></script>
     <script src="./candles-day.js"></script>
 </html>
