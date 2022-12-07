@@ -36,46 +36,49 @@ function send () {
     let candles = getValue("candles")
     let days = getValue("days")
     let list = []
-    if (!isNum(nowCandles) || !isNum(candles) || !isNum(days) || nowCandles == "" || candles == "" || days == "" || (candles - nowCandles).toString().indexOf("-") != -1) {
-        result.innerHTML = "錯誤!"
-    } else {
-        let c = candles - nowCandles // 差多少根蠟燭
-        let ca = Number(nowCandles)
-        let DayOfcandles = Number(Math.ceil(c / days))
-        // days = (DayOfcandles / ca)
-        // if (days == Infinity) {
-        //     days = DayOfcandles / (ca+1)
-        // }
-        console.log(c, ca, DayOfcandles, days)
-        // if ((Number(days.toFixed(0)) - days) > 0) {
-        //     days = Number(days.toFixed(0)) - 1
-        // } else {
-        //     days = Number(days.toFixed(0))
-        // }
-        for (let i=0; i < days; i++) {
-            console.log("awa", days, getNowTime())
-            if (DayOfcandles + Number(ca) >= candles) {
-                let a = candles - ca
-                // days = i
-                let chDAY = days - (i + 1) 
-                days = i + 1
-                list.push(`第 ${i+1} 天: ${candles}根蠟燭 (+${a})`)
+    let cheak = true
+    if (days >= 2000) {
+        alert("數字過大，無法繼續!")
+        return;
+    }
+    if (Number(days) > 999) {
+        cheak = confirm("偵測到天數過大，可能會需要運算一段時間，是否繼續?")
+    }
+    if (cheak) {
+        if (!isNum(nowCandles) || !isNum(candles) || !isNum(days) || nowCandles == "" || candles == "" || days == "" || (candles - nowCandles).toString().indexOf("-") != -1) {
+            result.innerHTML = "錯誤!"
+        } else {
+            let c = candles - nowCandles // 差多少根蠟燭
+            let ca = Number(nowCandles)
+            let DayOfcandles = Number(Math.ceil(c / days))
+            console.log(c, ca, DayOfcandles, days)
+            for (let i = 0; i < days; i++) {
+                console.log("awa", days, getNowTime())
+                if (DayOfcandles + Number(ca) >= candles) {
+                    let a = candles - ca
+                    // days = i
+                    let chDAY = days - (i + 1)
+                    days = i + 1
+                    list.push(`第 ${i + 1} 天: ${candles}根蠟燭 (+${a})`)
+                    let v = new Date(getNowTime()).addDays(days)
+                    let nowtime = v.getFullYear() + "/" + String(v.getMonth() + 1) + "/" + String(v.getDate());
+                    let now = `${nowtime.split(" ")[0]}`
+                    result.innerHTML = "每天需要 " + a + " 或 " + DayOfcandles + "(主要) 根蠟燭 (比預計少 " + chDAY + " 天 - 預計到" + now + ")" + `<br>${list.join("<br>")}`
+                    break;
+                } else {
+                    ca += Number(DayOfcandles)
+                    list.push(`第 ${i + 1} 天: ${ca}根蠟燭 (+${DayOfcandles})`)
+                }
+                console.log("test", days)
                 let v = new Date(getNowTime()).addDays(days)
                 let nowtime = v.getFullYear() + "/" + String(v.getMonth() + 1) + "/" + String(v.getDate());
                 let now = `${nowtime.split(" ")[0]}`
-                result.innerHTML = "每天需要 " + a + " 或 " + DayOfcandles + "(主要) 根蠟燭 (比預計少 " + chDAY + " 天 - 預計到" + now + ")" + `<br>${list.join("<br>")}`
-                break;
-            } else {
-                ca += Number(DayOfcandles)
-                list.push(`第 ${i+1} 天: ${ca}根蠟燭 (+${DayOfcandles})`)
+                console.log(now)
+                result.innerHTML = "每天需要 " + DayOfcandles + " 根蠟燭 " + "(預計到" + now + ")" + `<br>${list.join("<br>")}`
             }
-            console.log("test", days)
-            let v = new Date(getNowTime()).addDays(days)
-            let nowtime = v.getFullYear() + "/" + String(v.getMonth() + 1) + "/" + String(v.getDate());
-            let now = `${nowtime.split(" ")[0]}`
-            console.log(now)
-            result.innerHTML = "每天需要 " + DayOfcandles + " 根蠟燭 " + "(預計到" + now + ")" + `<br>${list.join("<br>")}`
         }
+    } else {
+        alert("取消成功!")
     }
 }
 

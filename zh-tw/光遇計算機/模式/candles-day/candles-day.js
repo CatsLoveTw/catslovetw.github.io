@@ -30,7 +30,7 @@ function send () {
     let nowCandles = getValue("now_candles")
     let candles = getValue("candles")
     let addCandles = getValue("addCandles")
-
+    let cheak = true
     if (!isNum(nowCandles) || !isNum(candles) || !isNum(addCandles) || nowCandles == "" || candles == "" || addCandles == "" || (candles - nowCandles).toString().indexOf("-") != -1) {
         result.innerHTML = "錯誤!"
     } else {
@@ -42,26 +42,37 @@ function send () {
         } else {
             res = Number(res.toFixed(0))
         }
-        for (let i=0; i<res; i++) {
-            if (res - i == 1 && (ca + Number(addCandles)) > Number(candles)) {
-                let a = Number(candles)
-                let b = a - ca
-                list.push(`第 ${i+1} 天: ${candles}根蠟燭 (+${b})`)
-            } else {
-                ca += Number(addCandles)
-                list.push(`第 ${i+1} 天: ${ca}根蠟燭 (+${addCandles})`)
+        if (res >= 50000) {
+            alert("數字過大，無法繼續!")
+            return;
+        }
+        if (Number(res) > 999) {
+            cheak = confirm("偵測到數值相差過大，可能會需要運算一段時間，是否繼續?")
+        }
+        if (cheak) {
+            for (let i = 0; i < res; i++) {
+                if (res - i == 1 && (ca + Number(addCandles)) > Number(candles)) {
+                    let a = Number(candles)
+                    let b = a - ca
+                    list.push(`第 ${i + 1} 天: ${candles}根蠟燭 (+${b})`)
+                } else {
+                    ca += Number(addCandles)
+                    list.push(`第 ${i + 1} 天: ${ca}根蠟燭 (+${addCandles})`)
+                }
             }
+            let date = new Date()
+            Date.prototype.addDays = function (days) {
+                this.setDate(this.getDate() + days);
+                return this;
+            }
+            let v = new Date(getNowTime()).addDays(res)
+            let nowtime = v.getFullYear() + "/" + String(v.getMonth() + 1) + "/" + String(v.getDate());
+            let now = `${nowtime.split(" ")[0]}`
+
+            result.innerHTML = "總共需要 " + res + " 天 " + "(預計到" + now + ")" + `<br>${list.join("<br>")}`
+        } else {
+            alert("取消成功!")
         }
-        let date = new Date()
-        Date.prototype.addDays = function(days) {
-            this.setDate(this.getDate() + days);
-            return this;
-        }
-        let v = new Date(getNowTime()).addDays(res)
-        let nowtime = v.getFullYear() + "/" + String(v.getMonth() + 1) + "/" + String(v.getDate());
-        let now = `${nowtime.split(" ")[0]}`
-        
-        result.innerHTML = "總共需要 " + res + " 天 " + "(預計到" + now + ")"  + `<br>${list.join("<br>")}`
     }
 }
 
