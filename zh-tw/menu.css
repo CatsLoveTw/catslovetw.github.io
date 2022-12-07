@@ -120,8 +120,8 @@ label {
   width: 100%;
   /*寬度100%*/
   height: 85px;
-  background-color: rgb(128, 128, 128);
-  /*背景顏色*/
+  background-image: linear-gradient(to right, rgb(128, 128, 128),rgb(104, 104, 104) ,rgb(14, 14, 14)); 
+  /* background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 166, 0), rgb(255, 238, 0), rgb(102, 255, 0), rgb(0, 119, 255), rgb(119, 0, 255), rgb(174, 0, 255)); */
   position: relative;
   transform: translateY(-100%);
   /*預設 / 如果navbarToggle未激活 Y設為-100%*/
@@ -237,6 +237,7 @@ footer {
   font-size: 17px;
   text-align: center;
   bottom: -100px;
-  background-color: gray;
+  /* background-color: gray; */
+  background-image: linear-gradient(to right, rgb(197, 197, 197),rgb(116, 116, 116) ,rgb(0, 0, 0)); 
   color: antiquewhite;
 }

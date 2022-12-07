@@ -54,7 +54,7 @@ function send () {
         // }
         for (let i=0; i < days; i++) {
             console.log("awa", days, getNowTime())
-            if (DayOfcandles + Number(ca) > candles) {
+            if (DayOfcandles + Number(ca) >= candles) {
                 let a = candles - ca
                 // days = i
                 let chDAY = days - (i + 1) 
