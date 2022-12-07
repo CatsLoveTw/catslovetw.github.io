@@ -237,7 +237,6 @@ footer {
   font-size: 17px;
   text-align: center;
   bottom: -100px;
-  /* background-color: gray; */
-  background-image: linear-gradient(to right, rgb(197, 197, 197),rgb(116, 116, 116) ,rgb(0, 0, 0)); 
-  color: antiquewhite;
+  background-color: gray;
+    color: antiquewhite;
 }
