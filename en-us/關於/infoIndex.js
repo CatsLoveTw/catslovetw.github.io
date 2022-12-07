@@ -116,7 +116,7 @@ function LastChange() {
         b_text.push(`${b_m} minutes`)
     }
     if (b_s != 0) {
-        b_text.push(`${b_s} second`)
+        b_text.push(`${b_s} seconds`)
     }
 
     var html = times.item(1).innerHTML
