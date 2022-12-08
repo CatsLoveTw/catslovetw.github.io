@@ -1,0 +1,21 @@
+.send {
+    width:50%; 
+    height: 35px;
+    border-color: rgb(47, 255, 141);
+    border-width: 2px;
+}
+
+.reset {
+    width:50%; 
+    height: 35px;
+    border-color: rgb(255, 106, 106);
+    border-width: 2px;
+    position: relative;
+    left: 50%; 
+    bottom: 35;
+    margin-bottom: -20;
+}
+
+.c {
+    width: 100%;
+}
