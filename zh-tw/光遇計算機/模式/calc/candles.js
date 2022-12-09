@@ -1,3 +1,13 @@
+const test = (a) => {
+    if (a.checked) {
+        const b = a.classList.item(1)
+        if (b == "a") {
+            
+        }
+    }
+}
+
+
 Date.prototype.addDays = function(days) {
     this.setDate(this.getDate() + days);
     return this;

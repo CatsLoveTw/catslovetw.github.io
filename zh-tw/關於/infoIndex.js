@@ -1,6 +1,6 @@
-let Rdate = "2022/12/8"
-let Rtime = "20:25:32"
-let Version = "1.0.35_pre2"
+let Rdate = "2022/12/9"
+let Rtime = "22:01:23"
+let Version = "1.0.35_pre3"
 
 
 const date = new Date()

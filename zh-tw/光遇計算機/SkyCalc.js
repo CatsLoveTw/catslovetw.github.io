@@ -58,9 +58,9 @@ const alls = {
     },
     "calc": {
         "value": "calc",
-        "display": "進階計算",
-        "href": "模式/calc/calc.html",
-        "disable": true
+        "display": "綜合計算",
+        "href": "模式/error/error.html",
+        "disable": false
     }
 }
 

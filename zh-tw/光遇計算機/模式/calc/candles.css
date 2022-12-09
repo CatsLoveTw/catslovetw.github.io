@@ -19,3 +19,18 @@
 .c {
     width: 100%;
 }
+
+input[type="checkbox"] {
+    margin-top: -40;
+    width: 20px;
+    height: 20px;
+    display: flex;
+}
+
+.s {
+    color: rgb(255, 67, 67);
+    position: relative;
+    left:35px;
+    bottom: 8;
+    display: block;
+}

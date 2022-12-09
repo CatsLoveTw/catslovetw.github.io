@@ -16,6 +16,15 @@
           <h1 class="title">光遇計算機</h1>
           <div class="body">
             <h2 style="text-align: center;">光遇計算機 - 進階計算</h1>
+            <div class="divs">
+                <p style="font-size: 25px;">選項:</p>
+                <p class="a s">蠟燭</p>
+                <input type="checkbox" class="checkbox a" id="candles" onchange="test(this)">
+                <p class="b s">季節蠟燭</p>
+                <input type="checkbox" class="checkbox b" id="seasonCandles" onchange="test(this)">
+                <p class="c s">愛心</p>
+                <input type="checkbox" class="checkbox c" id="love" onchange="test(this)">
+            </div>
             <div class="result">
               <select class="changeMode" id="changeMode" onchange="changeMode(this.value)"></select>
               <p>結果:</p>
@@ -26,11 +35,11 @@
                 <input class="input c" type="text" id="now_candles">
             </div>
             <div class="divs">
-                <p>輸入目標蠟燭</p>
+                <p>輸入目前持有愛心</p>
                 <input class="input c" type="text" id="candles">
             </div>
             <div class="divs">
-                <p>輸入最多天數</p>
+                <p>輸入</p>
                 <input class="input c" type="text" id="days">
             </div>
             <div class="divs op">
