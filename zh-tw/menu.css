@@ -79,10 +79,10 @@ body {
   transform: translateY(250%);
 }
 
-label {
+label[for="navbarToggle"] {
   color: #fff;
   /*設定圖示顏色*/
-  display: inline-block;
+  display: none;
   /*保留上下外邊距/內邊距*/
   background-color: #e51520;
   /*設定顏色*/
@@ -96,7 +96,6 @@ label {
   /*圓角設定*/
   cursor: pointer;
   /*滑鼠改變*/
-  display: none;
 }
 
 
@@ -209,6 +208,7 @@ label {
 
 .body {
   font-family: var(--fontFamily);
+  
 }
 
 .language {

@@ -15,36 +15,26 @@
           </header>
           <h1 class="title">光遇計算機</h1>
           <div class="body">
-            <h2 style="text-align: center;">光遇計算機 - 進階計算</h1>
-            <div class="divs">
-                <p style="font-size: 25px;">選項:</p>
-                    <input type="checkbox" class="checkbox a" id="candles" onchange="test(this)">
-                    <input type="checkbox" class="checkbox b" id="seasonCandles" onchange="test(this)">
-                    <input type="checkbox" class="checkbox c" id="love" onchange="test(this)">
-            </div>
-            <div class="divs">
-                <p>選擇目標:</p>
-                <form>
-                    <input type="radio" class="top" id="candles">
-                    <input type="radio" id="seasonCandles">
-                    <input type="radio" id="love">
-                </form>
-            </div>
+            <h2 style="text-align: center;">光遇計算機 - 季蠟計算</h1>
             <div class="result">
               <select class="changeMode" id="changeMode" onchange="changeMode(this.value)"></select>
               <p>結果:</p>
               <p class="result-text">無</p>  
             </div>
             <div class="divs">
-                <p>輸入目前持有蠟燭</p>
+                <p>輸入目前持有季蠟</p>
                 <input class="input c" type="text" id="now_candles">
             </div>
             <div class="divs">
-                <p>輸入目前持有愛心</p>
+                <p>輸入目標季蠟</p>
                 <input class="input c" type="text" id="candles">
             </div>
             <div class="divs">
-                <p>輸入</p>
+                <p>輸入一天最多新增季蠟數量 (小於7)</p>
+                <input class="input c" type="text" id="addCandlesMax">
+            </div>
+            <div class="divs">
+                <p>輸入預計天數</p>
                 <input class="input c" type="text" id="days">
             </div>
             <div class="divs op">

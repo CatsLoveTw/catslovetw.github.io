@@ -30,7 +30,7 @@ const alls = {
     },
     "optg": {
         "1": {
-            "display": "普通/季節蠟燭",
+            "display": "普通",
             "opts": {
                 "candles-day": {
                     "value": "candles-day",
@@ -45,14 +45,33 @@ const alls = {
             }
         },
         "2": {
+            "display": "季節蠟燭",
+            "opts": {
+                "season-candles-day": {
+                    "value": "season-candles-day",
+                    "display": "計算所需天數",
+                    "href": "模式/season-candles-day/candles-day.html"
+                },
+                "season-candles": {
+                    "value": "season-candles",
+                    "display": "計算每日所需季節蠟燭",
+                    "href": "模式/season-candles-candles/candles.html"
+                }
+            }
+        },
+        "3": {
             "display": "愛心計算",
             "opts": {
-                "ComingSoon": {
-                    "value": "",
-                    "display": "敬請期待",
-                    "href": "",
-                    "disable": true
-                }
+                "love-day": {
+                    "value": "love-day",
+                    "display": "計算所需天數",
+                    "href": "模式/love-day/love-day.html"
+                },
+                "love": {
+                    "value": "love",
+                    "display": "計算每日所需愛心",
+                    "href": "模式/love-love/love-love.html"
+                },
             }
         }
     },

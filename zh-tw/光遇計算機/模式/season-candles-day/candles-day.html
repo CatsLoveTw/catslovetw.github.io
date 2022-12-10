@@ -7,7 +7,7 @@
         <meta name="description" content="貓貓ㄉ網站">
         <link rel="stylesheet" href="../../../menu.css">
         <link rel="stylesheet" href="../../SkyCalc.css">
-        <link rel="stylesheet" href="./candles.css">
+        <link rel="stylesheet" href="./candles-day.css">
     </head>
     <body>
         <input type="checkbox" id="navbarToggle" checked="checked">
@@ -15,37 +15,23 @@
           </header>
           <h1 class="title">光遇計算機</h1>
           <div class="body">
-            <h2 style="text-align: center;">光遇計算機 - 進階計算</h1>
-            <div class="divs">
-                <p style="font-size: 25px;">選項:</p>
-                    <input type="checkbox" class="checkbox a" id="candles" onchange="test(this)">
-                    <input type="checkbox" class="checkbox b" id="seasonCandles" onchange="test(this)">
-                    <input type="checkbox" class="checkbox c" id="love" onchange="test(this)">
-            </div>
-            <div class="divs">
-                <p>選擇目標:</p>
-                <form>
-                    <input type="radio" class="top" id="candles">
-                    <input type="radio" id="seasonCandles">
-                    <input type="radio" id="love">
-                </form>
-            </div>
+            <h2 style="text-align: center;">光遇計算機 - 天數計算</h1>
             <div class="result">
               <select class="changeMode" id="changeMode" onchange="changeMode(this.value)"></select>
               <p>結果:</p>
               <p class="result-text">無</p>  
             </div>
             <div class="divs">
-                <p>輸入目前持有蠟燭</p>
+                <p>輸入目前持有季蠟</p>
                 <input class="input c" type="text" id="now_candles">
             </div>
             <div class="divs">
-                <p>輸入目前持有愛心</p>
+                <p>輸入目標季蠟</p>
                 <input class="input c" type="text" id="candles">
             </div>
             <div class="divs">
-                <p>輸入</p>
-                <input class="input c" type="text" id="days">
+                <p>輸入每天增加季蠟量 小於7</p>
+                <input class="input c" type="text" id="addCandles">
             </div>
             <div class="divs op">
                 <p>操作:</p>
@@ -60,5 +46,5 @@
     <script src="../../../menu.js"></script>
     <script src="../../../../language.js"></script>
     <script src="../../SkyCalc.js"></script>
-    <script src="./candles.js"></script>
+    <script src="./candles-day.js"></script>
 </html>
