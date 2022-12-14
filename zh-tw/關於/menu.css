@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+
+.d {
+    margin-top: 0;
+    padding-top: 5;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 5px solid rgba(100, 100, 100, 0.726);
+    border-top-width: 0px;
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: rgb(136, 136, 136);
+}
+
+#body {
+    padding-top: 20;
+    margin-top: -30;
+    padding-bottom: 27;
+    margin-bottom: -100;
+    background-color: rgb(83, 83, 83);
+}
+
+.lists {
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    padding-right: 20;
+    border: 5px solid;
+    border-color: rgba(100, 100, 100, 0.726);
+    border-bottom-width: 3px;
+    border-bottom-color: rgba(100, 100, 100, 0.726);
+    border-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.lists ul li {
+    border: 1px solid rgb(156, 156, 156);
+    background-color: gray;
+    transition: 0.5s;
+    color: aquamarine;
+    display: block;
+    padding: 6;
+    cursor: pointer;
+    margin-right: 10;
+    position: relative;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.lists ul li::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    /*高度 (類似y)*/
+    background-color: white;
+    transition: 0.75s;
+}
+
+.lists ul li:hover {
+    border: 1px solid rgb(189, 189, 189);
+    background-color: rgb(161, 161, 161);
+}
+
+.lists ul li:hover::before {
+    background-color: rgb(201, 201, 201);
+    left: 0;
+    right: 0;
+}

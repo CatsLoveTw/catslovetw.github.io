@@ -7,39 +7,70 @@
         <meta name="description" content="貓貓ㄉ網站">
         <link rel="stylesheet" href="../menu.css">
         <link rel="stylesheet" href="./infoIndex.css">
+        <link rel="stylesheet" href="./menu.css">
     </head>
     <body>
         <input type="checkbox" id="navbarToggle" checked="checked">
         <header class="main-header">
           </header>
           <h1 class="title">關於</h1>
-          <div class="body">
-            <h1 class="subtitle">作者資訊</h1>
-            <h2 class="link"><a class="url https://discord.com" href="">Discord - Cat1238756</a></h2>
-            <h2 class="link"><a class="url https://www.facebook.com/RiceCatUwU" href="">Facebook - Cat Aua</a></h2>
-            <h1 class="subtitle server"><a>伺服器資訊</a></h1>
-            <h2 class="sst version">版本: <version>[version]</version></h2>
-            <h2 class="sst create time">
-                創建時間:
-                <timetext><br>
-                2022/11/18
-                <br><timetext class="b">
-                (約 [time]前)
-                </timetext>
-            </timetext></h2>
-            <h2 class="sst time">
-                最後修改:
-                <timetext><br>
-                [date] [time] 
-                <timetext class="b">
-                ([day])
-            </timetext></timetext></h2>
-            <h2 class="sst time">現在時間:<timetext><br>[time]</h2></timetext>
-        </div>
+          <div class="body" id="body">
+            <div class="lists">
+                <ul>
+                    <li onclick="chper()" title="作者資訊" id="chperIcon">
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+                    </li>
+                    <li onclick="server()" title="伺服器資訊" id="serverIcon">
+                        <span class="material-symbols-outlined">
+                            dns
+                        </span>
+                    </li>
+                    <li onclick="update()" title="更新日誌" id="updateIcon">
+                        <span class="material-symbols-outlined">
+                            update
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div id="chper" class="d">
+                <h1 class="subtitle">作者資訊</h1>
+                <h2 class="link"><a class="url https://discord.com" href="">Discord - Cat1238756</a></h2>
+                <h2 class="link"><a class="url https://www.facebook.com/RiceCatUwU" href="">Facebook - Cat Aua</a></h2>
+            </div>
+            <div id="server" class="d" style="display: none">
+                <h1 class="subtitle server"><a>伺服器資訊</a></h1>
+                <h2 class="sst version">版本: <version>[version]</version></h2>
+                <h2 class="sst create time">
+                    創建時間:
+                    <timetext><br>
+                    2022/11/18
+                    <br><timetext class="b">
+                    (約 [time]前)
+                    </timetext>
+                </timetext></h2>
+                <h2 class="sst time">
+                    最後修改:
+                    <timetext><br>
+                    [date] [time] 
+                    <timetext class="b">
+                    ([day])
+                </timetext></timetext></h2>
+                <h2 class="sst time">現在時間:<timetext><br>[time]</h2></timetext>
+            </div>
+            <div id="update" class="d" style="display: none">
+                <h1 class="subtitle opac"><a>更新日誌 (點擊查看)</a></h1>
+                <div id="updatesText">
+
+                </div>
+            </div>
+    </div>
           </body>
     <footer id="footer">
         text
     </footer>
+    <script src="./menu.js"></script>
     <script src="../menu.js"></script>
     <script src="../../language.js"></script>
     <script src="./infoIndex.js"></script>

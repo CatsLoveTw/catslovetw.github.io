@@ -24,7 +24,7 @@
 .server a:hover::after {
     position: relative;
     content: ' 1個月:30天';
-    color: rgb(136, 136, 136);
+    color: rgb(196, 196, 196);
     font-size: 17.5px;
     bottom: 10px;
     left: 10px;
@@ -34,7 +34,7 @@
 .server a::after {
     position: relative;
     content: ' 1個月:30天';
-    color: rgb(199, 196, 196);
+    color: rgb(235, 235, 235);
     font-size: 17.5px;
     bottom: 10px;
     left: 10px;
@@ -71,4 +71,41 @@ timetext {
 .link a {
     color: goldenrod;
     text-decoration: none;
+}
+
+.text {
+    margin-top: -15px;
+}
+
+.version {
+    font-size: 30px;
+    color: yellow;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.Uptitle {
+    color:aqua;
+}
+
+.updatebox {
+    position: absolute;
+    width: auto;
+    height: auto;
+    bottom: 60%;
+    padding-top: 20px;
+    left: 0;
+    color: white;
+    background-color: rgb(80, 80, 80);
+    border: 2px solid white;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.back {
+    color:aqua;
+    padding-bottom: 25px;
+    padding-right: 150;
+    cursor: pointer;
 }

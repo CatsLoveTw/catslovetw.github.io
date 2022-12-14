@@ -1,6 +1,6 @@
-let Rdate = "2022/12/10"
-let Rtime = "15:59:21"
-let Version = "1.0.36_pre1"
+let Rdate = "2022/12/14"
+let Rtime = "20:22:42"
+let Version = "1.0.37_pre1"
 
 
 const date = new Date()
@@ -127,8 +127,69 @@ function LastChange() {
 
 // 現在時間
 times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
-
+// 取得更新
+function getUpdate() {
+    const allUpdates = {
+        "V1.0.37_pre1": {
+            1: {
+                "title": "可能是大更新?",
+                "website": "關於",
+                "updates": ["修改介面", "新增更新日誌"]
+            }
+        }
+    }
+    let t = []
+    for (let i in allUpdates) {
+        for (let j in allUpdates[i]) {
+            let num = 0
+            let g = []
+            for (let k in allUpdates[i][j].updates) {
+                num++
+                g.push(`${num}.${allUpdates[i][j].updates[k]}`)
+            }
+            
+            t.push(`
+                <h2 class="version opac" onclick="PopBox('${i}')">${i}</h2>
+                <div id="${i}" class="updatebox" onclick="backBox('${i}')" style="display: none;">
+                <span class="material-symbols-outlined back">
+                    arrow_back
+                </span>
+                    <h1 class="Uptitle">${allUpdates[i][j].title}</h1>
+                    <h2 class="text website">更新網站:${allUpdates[i][j].website}</h2>
+                    <h3 class="text update">更新內容:<br>${g.join("<br>")}</h3>
+                </div>
+            `)
+        }
+    }
+    let update = document.getElementById("updatesText")
+    update.innerHTML = t.join("<br>")
+}
+// 跳出資訊
+function PopBox (divID) {
+    const box = document.getElementById(divID)
+    const body = document.getElementsByClassName("opac")
+    for (let i=0; i<body.length; i++) {
+        body.item(i).style.opacity = "0.1"
+    }
+    
+    box.style.left = "50%";
+    box.style.marginLeft = "-100px"
+    box.style.display = "block"
+    box.style.opacity = "1"
+}
+// 返回
+function backBox (divID) {
+    const box = document.getElementById(divID)
+    const body = document.getElementsByClassName("opac")
+    for (let i=0; i<body.length; i++) {
+        body.item(i).style.opacity = "1"
+    }
+    box.style.left = 0
+    box.style.display = "none"
+    box.style.opacity = "1"
+}
 
 ListVersion()
 CreateTime()
 LastChange()
+getUpdate()
