@@ -5,14 +5,14 @@
 .subtitle {
     color: rgb(136, 187, 245);
     margin: 10px 0 10px 0;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .subtitle a {
     text-decoration: none;
     color: rgb(136, 187, 245);
     margin: 10px 0 10px 0;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .sst {
@@ -26,7 +26,7 @@
     content: ' 1個月:30天';
     color: rgb(196, 196, 196);
     font-size: 17.5px;
-    bottom: 10px;
+    bottom: 5px;
     left: 10px;
     cursor: default;
 }
@@ -36,10 +36,20 @@
     content: ' 1個月:30天';
     color: rgb(235, 235, 235);
     font-size: 17.5px;
-    bottom: 10px;
+    bottom: 5px;
     left: 10px;
 }
 
+.versiontitle {
+    transition: 0.5s;
+    color: yellow;
+    cursor: pointer;
+}
+
+.versiontitle:hover {
+    color: rgb(255, 217, 0);
+    background-color: rgb(139, 139, 139);
+}
 
 version {
     position: relative;
@@ -77,12 +87,33 @@ timetext {
     margin-top: -15px;
 }
 
+.versionInfo {
+    color: rgb(226, 166, 0);
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.versionDiv {
+    background-color: rgb(134, 134, 134);
+    padding-top: 20px;
+    text-align: center;
+}
+
 .version {
-    font-size: 30px;
+    transition: 0.5s;
+    font-size: 20px;
     color: yellow;
-    margin-top: 10px;
+    padding-top: 10;
+    margin-top: -20px;
     margin-bottom: 0px;
+    border-bottom: 2px solid rgb(255, 255, 255);
     cursor: pointer;
+}
+
+.version:hover {
+    background-color: rgb(179, 179, 179);
+    color: rgb(255, 217, 0);
+    border-bottom: 2px solid rgb(167, 167, 167);
 }
 
 .Uptitle {
@@ -91,11 +122,13 @@ timetext {
 
 .updatebox {
     position: absolute;
-    width: auto;
-    height: auto;
-    bottom: 60%;
-    padding-top: 20px;
+    width: 100%;
     left: 0;
+    right: 0;
+    height: auto;
+    top: 170px;
+    margin-right: 70;
+    text-align: center;
     color: white;
     background-color: rgb(80, 80, 80);
     border: 2px solid white;
@@ -103,9 +136,33 @@ timetext {
     z-index: 999;
 }
 
+#errorboxs {
+    position: absolute;
+    width: auto;
+    height: auto;
+    bottom: 36%;
+    right: 50%;
+    margin-right: -140;
+    padding-top: 13px;
+    color: white;
+    background-color: #777;
+    border: 3px solid white;
+    border-radius: 10px;
+    z-index: 999;
+}
+
 .back {
-    color:aqua;
-    padding-bottom: 25px;
-    padding-right: 150;
+    position: absolute;
+    top: 15;
+    left: 2%;
+    color: rgb(163, 163, 163);
     cursor: pointer;
+}
+
+.website {
+    color: yellow
+}
+
+.update {
+    color: rgb(216, 216, 216)
 }

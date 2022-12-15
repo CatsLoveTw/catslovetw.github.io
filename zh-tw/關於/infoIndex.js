@@ -1,12 +1,12 @@
-let Rdate = "2022/12/14"
-let Rtime = "20:22:42"
-let Version = "1.0.37_pre1"
+let Rdate = "2022/12/15"
+let Rtime = "19:40:50"
+let Version = "1.0.37_pre2"
 
 
 const date = new Date()
 // 版本顯示
 function ListVersion () {
-    const version = document.getElementsByClassName("version").item(0)
+    const version = document.getElementsByClassName("versiontitle").item(0)
     version.innerHTML = version.innerHTML.replace("[version]", Version)
 }
 
@@ -130,39 +130,87 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 // 取得更新
 function getUpdate() {
     const allUpdates = {
-        "V1.0.37_pre1": {
-            1: {
-                "title": "可能是大更新?",
-                "website": "關於",
-                "updates": ["修改介面", "新增更新日誌"]
+        "V1.0.37": {
+            "V1.0.37_pre2": {
+                1: {
+                    "title": "更新",
+                    "website": "關於",
+                    "updates": ["現在點擊版本已可直接通往更新資訊", "更新日誌新增版本分類", "更新日誌修改各項字體大小", "更新日誌修改更新資訊顯示 (寬度 - 字體大小改變 -> 100%)", "更新資訊字體上色", "簡潔切換頁面用的JS檔案"]
+                },
+                2: {
+                    "title": "修改",
+                    "website": "提醒",
+                    "updates": ["修改連結顯示字體大小"]
+                }
+            },
+            "V1.0.37_pre1": {
+                1: {
+                    "title": "可能是大更新?",
+                    "website": "關於",
+                    "updates": ["修改介面", "新增更新日誌"]
+                }
+            }
+        },
+        "未完整記載": {
+            "V1.0.0-V1.0.36": {
+                1: {
+                    "title": "新增網頁",
+                    "website": "首頁 關於 其他網頁 連結提醒 錯誤 光遇計算機",
+                    "updates": ["新增網頁"]
+                }
             }
         }
     }
     let t = []
-    for (let i in allUpdates) {
-        for (let j in allUpdates[i]) {
-            let num = 0
-            let g = []
-            for (let k in allUpdates[i][j].updates) {
-                num++
-                g.push(`${num}.${allUpdates[i][j].updates[k]}`)
+    for (let r in allUpdates) {
+        t.push(`
+            <h1 class="versionInfo">${r}</h1>
+            <div class="versionDiv">
+        `)
+        for (let i in allUpdates[r]) {
+            let al = []
+            for (let j in allUpdates[r][i]) {
+                let num = 0
+                let g = []
+                for (let k in allUpdates[r][i][j].updates) {
+                    num++
+                    g.push(`${num}.${allUpdates[r][i][j].updates[k]}`)
+                }
+                al.push(`
+                    <h1 class="Uptitle">${allUpdates[r][i][j].title}</h1>
+                    <h2 class="text website">更新網站:<br><div style="color: rgb(218, 149, 0)">${allUpdates[r][i][j].website.split(" ").join("<br>")}</div></h2>
+                    <h3 class="text update" style="color: yellow; font-size: 1.5em;">更新內容:<br><div style="color: rgb(255, 209, 209); font-size: 15px;">${g.join("<br>")}</div></h3>
+                `)
+
             }
-            
             t.push(`
                 <h2 class="version opac" onclick="PopBox('${i}')">${i}</h2>
-                <div id="${i}" class="updatebox" onclick="backBox('${i}')" style="display: none;">
-                <span class="material-symbols-outlined back">
+                <div id="${i}" class="updatebox" style="display: none;">
+                <span class="material-symbols-outlined back" onclick="backBox('${i}')">
                     arrow_back
                 </span>
-                    <h1 class="Uptitle">${allUpdates[i][j].title}</h1>
-                    <h2 class="text website">更新網站:${allUpdates[i][j].website}</h2>
-                    <h3 class="text update">更新內容:<br>${g.join("<br>")}</h3>
+                    ${al.join("")}
+                    <h3><a class="url https://github.com/CatsLoveTw/catslovetw.github.io/commits/main" href="" style="color: aqua; font-size: 18">移動至github查看所有更新資訊</a></h3>
                 </div>
             `)
         }
+        t.push('</div>')
     }
     let update = document.getElementById("updatesText")
     update.innerHTML = t.join("<br>")
+    let errorBox = document.getElementById("errorBox")
+    errorBox.innerHTML = `
+    <div id="errorboxs" style="display: none;">
+    <span class="material-symbols-outlined back" onclick="document.getElementById('errorboxs').style.display = 'none'">
+        arrow_back
+    </span>
+        <div class="error">
+            <h1 class="errortext t">404</h1>
+            <h2 class="errortext">找不到有關該版本的更新資訊</h2>
+            <h2 class="errortext"><a href="https://github.com/CatsLoveTw/catslovetw.github.io/commits/main" style="color: aqua; font-size: 18">移動至github查看更新資訊</a></h2>
+        </div>
+    </div>
+    `
 }
 // 跳出資訊
 function PopBox (divID) {
@@ -171,23 +219,37 @@ function PopBox (divID) {
     for (let i=0; i<body.length; i++) {
         body.item(i).style.opacity = "0.1"
     }
-    
-    box.style.left = "50%";
-    box.style.marginLeft = "-100px"
     box.style.display = "block"
     box.style.opacity = "1"
 }
 // 返回
 function backBox (divID) {
     const box = document.getElementById(divID)
+    try {
     const body = document.getElementsByClassName("opac")
-    for (let i=0; i<body.length; i++) {
-        body.item(i).style.opacity = "1"
-    }
+        for (let i=0; i<body.length; i++) {
+            body.item(i).style.opacity = "1"
+        }
+    } catch {}
     box.style.left = 0
     box.style.display = "none"
     box.style.opacity = "1"
 }
+// 版本資訊顯示
+function getVersionBox (doc) {
+    let version = "V" + doc.innerHTML.split("版本: ")[1].replace("<version>", '').replace("</version>", '')
+    console.log(version)
+    try {
+        let a = document.getElementById(version)
+        a.innerHTML
+    } catch {
+        document.getElementById("errorboxs").style.display = "block"
+        return;
+    }
+    PopBox(version)
+    update()
+}
+
 
 ListVersion()
 CreateTime()

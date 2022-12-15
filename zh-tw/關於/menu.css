@@ -10,7 +10,7 @@
     border-radius: 8px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    background-color: rgb(136, 136, 136);
+    background-color: rgb(105, 105, 105);
 }
 
 #body {
@@ -39,7 +39,7 @@
     border: 1px solid rgb(156, 156, 156);
     background-color: gray;
     transition: 0.5s;
-    color: aquamarine;
+    color: rgb(0, 255, 170);
     display: block;
     padding: 6;
     cursor: pointer;
