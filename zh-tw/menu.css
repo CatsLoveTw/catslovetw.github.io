@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0);
 
 html,
 body {
@@ -226,6 +227,137 @@ label[for="navbarToggle"] {
   color: #919191;
 }
 
+#tran {
+  display: none;
+}
+
+label #translateIcon {
+  --border-weight: 2px;
+  border: var(--border-weight) solid rgb(0, 255, 213);
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 13px;
+  background-color: #a3a3a3;
+  color: white;
+  position: absolute;
+  transform: translateY(calc(113px - var(--border-weight) * 2));
+  left: 10;
+  cursor: pointer;
+  z-index: 10000;
+  transition: 0.15s;
+}
+
+label #translateIcon:hover {
+  font-size: 16px;
+}
+  
+#tran:checked~label #translateIcon {
+  color: black;
+  font-size: 16px;
+}
+
+#tran:checked~.trans {
+  display: block;
+}
+
+.trans {
+  display: none;
+  border: 1px solid rgb(155, 155, 155);
+  position: absolute;
+  transform: translateY(-150px);
+  left: 50;
+  width: 240;
+  background-color: rgb(228, 228, 228);
+  padding: 30 0 30 0;
+  border-radius: 20px;
+  z-index: 10000;
+}
+
+.trantitle {
+  position: relative;
+  bottom: 13px;
+  font-size: 24px;
+  margin-bottom: -20px;
+  text-align: center;
+  background-color: white;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  color: rgb(255, 196, 0);
+}
+
+.tranUrl {
+  --font-size: 17px;
+  --font-length: 4;
+  --padding-length: 3.5px;
+  font-weight: bold;
+  font-size: var(--font-size);
+  text-decoration: none;
+  background-image: linear-gradient(to left, rgb(251, 255, 0), rgb(123, 255, 0));
+  border: 1px solid rgb(81, 255, 0);
+  border-radius: 8px;
+  color: black;
+  position: relative;
+  left: calc((240px - (var(--font-size) * var(--font-length)) - calc(4px + var(--padding-length) * 2)) / 2);
+  padding: var(--padding-length);
+  bottom: -10;
+}
+
+.tranUrl:hover {
+  color: white;
+  background-image: linear-gradient(to left, rgb(255, 238, 0), rgb(72, 255, 0));
+}
+
+.langs {
+  background-color: rgb(245, 245, 245);
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding-bottom: 1;
+}
+
+.completeTitle {
+  color:rgb(0, 255, 213);
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: -15px;
+}
+
+.langComplete {
+  font-size: 15px;
+  margin-bottom: -10px;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(255, 255, 255);
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgb(240, 240, 240);
+}
+
+.langComplete a {
+  display: block;
+  text-decoration: none;
+}
+
+.last_langComplete {
+  margin-bottom: 15;
+}
+
+.langred {
+  color: red;
+}
+
+.langorange {
+  color: orange;
+}
+
+.langgreen {
+  color:rgb(50, 205, 58);
+}
+
+
 footer {
   position: relative;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -239,4 +371,9 @@ footer {
   bottom: -100px;
   background-color: gray;
     color: antiquewhite;
+}
+
+
+@keyframes aw {
+  
 }

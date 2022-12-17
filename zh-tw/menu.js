@@ -73,18 +73,28 @@ const pages = {
 try {
 const menu = document.getElementsByClassName("main-header").item(0)
 const getTitle = document.getElementsByClassName("title").item(0)
-if (getTitle.innerHTML == "首頁") {
+if (getTitle.innerHTML == "首頁" || getTitle.innerHTML == "找不到網頁") {
   let pathes = ""
   for (let i in pages.href) {
     let index = ""
     let display = i
-    if (i == "首頁") {
+    if (i == getTitle.innerHTML) {
       index = ""
       pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
     } else {
-      index = `./zh-tw/${pages.href[i].path.split("../")[1]}`
-      pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
-    }
+      if (getTitle.innerHTML == "首頁") {
+        index = `./zh-tw/${pages.href[i].path.split("../")[1]}`
+        pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+      } else {
+          if (i == "首頁") {
+            index = "./index.html"
+            pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+          } else {
+            index = `./zh-tw/${pages.href[i].path.split("../")[1]}`
+            pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+          }
+      }
+  }
       
 }
   menu.innerHTML = `
@@ -137,23 +147,65 @@ getTitle.innerHTML = ""
 
 // footer / language
 var footer = document.getElementById("footer")
+let langSupports = {
+  'zh-tw': {name: '繁體中文', comp: '100%', path: 'index.html'},
+  'en-us': {name: '英文', comp: '65%', path: 'en-us/index.html'},
+  'zh-cn': {name: '簡體中文', comp: '0%', path: 'zh-tw/錯誤/errorwebsite.html'},
+  'jp': {name: '日文', comp: '0%', path: 'zh-tw/錯誤/errorwebsite.html'}
+}
+let transLang = []
+for (let i in langSupports) {
+  let index = 0
+  let color = ['langred', 'langorange', 'langgreen']
+  let person = Number(langSupports[i].comp.replace("%", ""))
+  if (person < 50) {
+    index = 0
+  } else if (person >= 50 && person <= 84) {
+    index = 1
+  } else {
+    index = 2
+  }
+  console.log(location.href.split("//")[0] + "//" + document.location.href.split("//")[1].split("/")[0] + "/" + langSupports[i].path)
+  let path = location.href.split("//")[0] + "//" + document.location.href.split("//")[1].split("/")[0] + "/" + langSupports[i].path
+  if (i == "jp") {
+    transLang.push(`<p class="langComplete last_langComplete" id="${i}"><a href="${path}" class="${color[index]}">${langSupports[i].name}: ${langSupports[i].comp}</a></p>`)
+  } else {
+  transLang.push(`<p class="langComplete" id="${i}"><a href="${path}" class="${color[index]}">${langSupports[i].name}: ${langSupports[i].comp}</a></p>`)
+}
+}
 if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F") != -1) {
   footer.outerHTML = `
   <div class="f" id="f">
+  <input type="checkbox" name="tran" id="tran">
+            <label for="tran" title="協助翻譯"><span class="material-symbols-outlined" id="translateIcon">translate</span></label>
+            <div class="trans">
+              <h2 class="trantitle">想要幫助我們翻譯?</h2>
+              <a href="https://catslovetw.github.io/zh-tw/關於/infoIndex.html" class="tranUrl">聯絡作者</a>
+            </div>
   <footer id="footer">
     text
   </footer>
-  <select id="language" class="language" onchange="changeLang(this)">
+  <select id="language" class="language" onchange="changeLang(this)" title="選擇語言">
             <option value="zh-tw" selected>繁體中文</option>
           </select>
   </div>`
 } else {
   footer.outerHTML = `
   <div class="f" id="f">
+  <input type="checkbox" name="tran" id="tran">
+            <label for="tran" title="協助翻譯"><span class="material-symbols-outlined" id="translateIcon">translate</span></label>
+            <div class="trans">
+              <h2 class="trantitle">想要幫助我們翻譯?</h2>
+              <div class="langs">
+              <p class="completeTitle">語言進度</p>
+              ${transLang.join("")}
+              </div>
+              <a href="https://catslovetw.github.io/zh-tw/關於/infoIndex.html" class="tranUrl">聯絡作者</a>
+            </div>
   <footer id="footer">
     text
   </footer>
-  <select id="language" class="language" onchange="changeLang(this)">
+  <select id="language" class="language" onchange="changeLang(this)" title="選擇語言">
             <option value="zh-tw" selected>繁體中文</option>
             <option value="en-us" class="notSelected">English</option>
           </select>

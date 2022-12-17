@@ -1,6 +1,6 @@
-let Rdate = "2022/12/15"
-let Rtime = "19:40:50"
-let Version = "1.0.37_pre2"
+let Rdate = "2022/12/16"
+let Rtime = "21:31:24"
+let Version = "1.0.38"
 
 
 const date = new Date()
@@ -130,6 +130,30 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 // 取得更新
 function getUpdate() {
     const allUpdates = {
+        "V1.0.38": {
+            "V1.0.38_pre1": {
+                1: {
+                    "title": "更新",
+                    "website": "全部",
+                    "updates": ["新增協助翻譯功能(聯繫作者)"]
+                },
+                2: {
+                    "title": "更新",
+                    "website": "錯誤",
+                    "updates": ["新增找不到網頁時的顯示"]
+                },
+                3: {
+                    "title": "調整",
+                    "website": "首頁",
+                    "updates": ["文字置中"]
+                },
+                4: {
+                    "title": "調整",
+                    "website": "其他網頁",
+                    "updates": ["調整背景色彩 (漸層)", "調整文字色彩 (類似皮膚色 -> 橘色)", "調整碰觸到選項時的背景色彩 (#b3afaf -> #9c9c9c)"]
+                }
+            }
+        },
         "V1.0.37": {
             "V1.0.37_pre2": {
                 1: {
