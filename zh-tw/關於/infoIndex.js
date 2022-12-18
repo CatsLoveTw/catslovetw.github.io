@@ -1,6 +1,6 @@
-let Rdate = "2022/12/17"
-let Rtime = "15:50:23"
-let Version = "1.0.38_pre1"
+let Rdate = "2022/12/18"
+let Rtime = "22:16:23"
+let Version = "1.0.38_pre2"
 
 
 const date = new Date()
@@ -131,6 +131,18 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 function getUpdate() {
     const allUpdates = {
         "V1.0.38": {
+            "V1.0.38_pre2": {
+                1: {
+                    "title": "修復",
+                    "website": "光遇計算機",
+                    "updates": ["修復光遇計算機無法顯示翻譯進度之問題"]
+                },
+                2: {
+                    "title": "修復",
+                    "website": "本網站",
+                    "updates": ["修復找不到網址時無法載入css檔案之問題"]
+                }
+            },
             "V1.0.38_pre1": {
                 1: {
                     "title": "更新",
@@ -244,7 +256,7 @@ function PopBox (divID) {
         body.item(i).style.opacity = "0.1"
     }
     box.style.display = "block"
-    box.style.opacity = "1"
+    box.style.opacity = "0.9"
 }
 // 返回
 function backBox (divID) {

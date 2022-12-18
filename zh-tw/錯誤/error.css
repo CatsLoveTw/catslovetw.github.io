@@ -8,7 +8,7 @@ body {
   width: auto;
   height: 350px;
   font-size: 13px;
-  background-color: #777;
+  background-image: linear-gradient(to bottom, rgb(212, 209, 209), rgb(112, 112, 112));
   text-align: center;
   margin: -30 0 0 0;
 }

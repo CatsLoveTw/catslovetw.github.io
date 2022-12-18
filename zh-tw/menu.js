@@ -180,6 +180,10 @@ if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F") != -1
             <label for="tran" title="協助翻譯"><span class="material-symbols-outlined" id="translateIcon">translate</span></label>
             <div class="trans">
               <h2 class="trantitle">想要幫助我們翻譯?</h2>
+              <div class="langs">
+              <p class="completeTitle">語言進度</p>
+              ${transLang.join("")}
+              </div>
               <a href="https://catslovetw.github.io/zh-tw/關於/infoIndex.html" class="tranUrl">聯絡作者</a>
             </div>
   <footer id="footer">
