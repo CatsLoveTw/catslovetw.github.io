@@ -1,6 +1,6 @@
 let Rdate = "2022/12/18"
 let Rtime = "22:16:23"
-let Version = "1.0.38_pre2"
+let Version = "1.0.38_pre3"
 
 
 const date = new Date()
@@ -131,6 +131,13 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 function getUpdate() {
     const allUpdates = {
         "V1.0.38": {
+            "V1.0.38_pre3": {
+                1: {
+                    "title": "修復",
+                    "website": "找不到網址",
+                    "updates": ["修復連結失效之問題"]
+                }
+            },
             "V1.0.38_pre2": {
                 1: {
                     "title": "修復",
@@ -139,7 +146,7 @@ function getUpdate() {
                 },
                 2: {
                     "title": "修復",
-                    "website": "本網站",
+                    "website": "找不到網址",
                     "updates": ["修復找不到網址時無法載入css檔案之問題"]
                 }
             },

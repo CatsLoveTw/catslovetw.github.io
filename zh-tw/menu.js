@@ -42,22 +42,22 @@ try {
 const pages = {
   "href": {
     "首頁": {
-      "path":"../../index.html",
+      "path":"/index.html",
       "settitle":"網站首頁",
       "title":"首頁"
     },
     "關於": {
-      "path":"../關於/infoIndex.html",
+      "path":"/zh-tw/關於/infoIndex.html",
       "settitle":"想了解我?",
       "title":"關於"
     },
     "...": {
-      "path":"../其他網頁/other.html",
+      "path":"/zh-tw/其他網頁/other.html",
       "settitle":"其他網頁",
       "title":"傳送門",
       "submenu": { // 因為架構改變 submenu可以視為更多傳送點。 (只會顯示於傳送門處)
         "光遇計算機": {
-          "path":"../光遇計算機/SkyCalc.html",
+          "path":"/zh-tw/光遇計算機/SkyCalc.html",
           "settitle":"光遇計算機",
           "title":"光遇計算機"
         },
@@ -71,76 +71,106 @@ const pages = {
   }
 }
 try {
+const url = (path) => {
+  let getNowUrl = location.href.split("//")[0] + "//" + location.href.split("//")[1].split("/")[0] + path
+  console.log(getNowUrl)
+  return getNowUrl
+}
 const menu = document.getElementsByClassName("main-header").item(0)
 const getTitle = document.getElementsByClassName("title").item(0)
-if (getTitle.innerHTML == "首頁" || getTitle.innerHTML == "找不到網頁") {
-  let pathes = ""
-  for (let i in pages.href) {
-    let index = ""
-    let display = i
-    if (i == getTitle.innerHTML) {
+
+let pathes = ''
+for (let i in pages.href) {
+  let index = url(pages.href[i].path)
+    if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
       index = ""
-      pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+      pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
     } else {
-      if (getTitle.innerHTML == "首頁") {
-        index = `./zh-tw/${pages.href[i].path.split("../")[1]}`
-        pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
-      } else {
-          if (i == "首頁") {
-            index = "./index.html"
-            pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
-          } else {
-            index = `./zh-tw/${pages.href[i].path.split("../")[1]}`
-            pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
-          }
-      }
+      pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
   }
-      
-}
-  menu.innerHTML = `
-  <div class="container">
-    <h1><a href="" class="h">${getTitle.innerHTML}</a></h1>
-    <nav>
-      <ul class="main-menu">
-        ${pathes} 
-      </ul>
-    </nav>
-    <label for="navbarToggle"><span class="material-icons">expand_more</span></label>
-  </div>
-`
-} else {
-  let pathes = ''
-  for (let i in pages.href) {
-    let index = pages.href[i].path
-    if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F/%E6%A8%A1%E5%BC%8F") == -1) {
-      if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
-        index = ""
-        pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
-      } else {
-        pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
-      }
-    } else {
-      if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
-        index = ""
-        pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
-      } else {
-        pathes += `<li class="after"><a href="${"../../" + index}" title="${pages.href[i].settitle}">${i}</a></li>`
-      }
-    }
 }
 
-  menu.innerHTML = `
-  <div class="container">
-    <h1><a href="" class="h">${getTitle.innerHTML}</a></h1>
-    <nav>
-      <ul class="main-menu">
-        ${pathes}  
-      </ul>
-    </nav>
-    <label for="navbarToggle"><span class="material-icons">expand_more</span></label>
-  </div>
+menu.innerHTML = `
+<div class="container">
+  <h1><a href="" class="h">${getTitle.innerHTML}</a></h1>
+  <nav>
+    <ul class="main-menu">
+      ${pathes}  
+    </ul>
+  </nav>
+  <label for="navbarToggle"><span class="material-icons">expand_more</span></label>
+</div>
 `
-}
+
+
+// if (getTitle.innerHTML == "首頁" || getTitle.innerHTML == "找不到網頁") {
+//   let pathes = ""
+//   for (let i in pages.href) {
+//     let index = ""
+//     let display = i
+//     if (i == getTitle.innerHTML) {
+//       index = ""
+//       pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+//     } else {
+//       if (getTitle.innerHTML == "首頁") {
+//         index = `./zh-tw/${pages.href[i].path.split("../")[1]}`
+//         pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+//       } else {
+//           if (i == "首頁") {
+//             index = "./index.html"
+//             pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+//           } else {
+//             index = `./zh-tw/${pages.href[i].path.split("../")[1]}`
+//             pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${display}</a></li>`
+//           }
+//       }
+//   }
+      
+// }
+//   menu.innerHTML = `
+//   <div class="container">
+//     <h1><a href="" class="h">${getTitle.innerHTML}</a></h1>
+//     <nav>
+//       <ul class="main-menu">
+//         ${pathes} 
+//       </ul>
+//     </nav>
+//     <label for="navbarToggle"><span class="material-icons">expand_more</span></label>
+//   </div>
+// `
+// } else {
+//   let pathes = ''
+//   for (let i in pages.href) {
+//     let index = pages.href[i].path
+//     if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F/%E6%A8%A1%E5%BC%8F") == -1) {
+//       if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
+//         index = ""
+//         pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+//       } else {
+//         pathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+//       }
+//     } else {
+//       if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
+//         index = ""
+//         pathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+//       } else {
+//         pathes += `<li class="after"><a href="${"../../" + index}" title="${pages.href[i].settitle}">${i}</a></li>`
+//       }
+//     }
+// }
+
+//   menu.innerHTML = `
+//   <div class="container">
+//     <h1><a href="" class="h">${getTitle.innerHTML}</a></h1>
+//     <nav>
+//       <ul class="main-menu">
+//         ${pathes}  
+//       </ul>
+//     </nav>
+//     <label for="navbarToggle"><span class="material-icons">expand_more</span></label>
+//   </div>
+// `
+// }
 getTitle.innerHTML = ""
 } catch {}
 
@@ -173,49 +203,96 @@ for (let i in langSupports) {
   transLang.push(`<p class="langComplete" id="${i}"><a href="${path}" class="${color[index]}">${langSupports[i].name}: ${langSupports[i].comp}</a></p>`)
 }
 }
-if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F") != -1) {
-  footer.outerHTML = `
-  <div class="f" id="f">
-  <input type="checkbox" name="tran" id="tran">
-            <label for="tran" title="協助翻譯"><span class="material-symbols-outlined" id="translateIcon">translate</span></label>
-            <div class="trans">
-              <h2 class="trantitle">想要幫助我們翻譯?</h2>
-              <div class="langs">
-              <p class="completeTitle">語言進度</p>
-              ${transLang.join("")}
-              </div>
-              <a href="https://catslovetw.github.io/zh-tw/關於/infoIndex.html" class="tranUrl">聯絡作者</a>
-            </div>
-  <footer id="footer">
-    text
-  </footer>
-  <select id="language" class="language" onchange="changeLang(this)" title="選擇語言">
-            <option value="zh-tw" selected>繁體中文</option>
-          </select>
-  </div>`
-} else {
-  footer.outerHTML = `
-  <div class="f" id="f">
-  <input type="checkbox" name="tran" id="tran">
-            <label for="tran" title="協助翻譯"><span class="material-symbols-outlined" id="translateIcon">translate</span></label>
-            <div class="trans">
-              <h2 class="trantitle">想要幫助我們翻譯?</h2>
-              <div class="langs">
-              <p class="completeTitle">語言進度</p>
-              ${transLang.join("")}
-              </div>
-              <a href="https://catslovetw.github.io/zh-tw/關於/infoIndex.html" class="tranUrl">聯絡作者</a>
-            </div>
-  <footer id="footer">
-    text
-  </footer>
-  <select id="language" class="language" onchange="changeLang(this)" title="選擇語言">
-            <option value="zh-tw" selected>繁體中文</option>
-            <option value="en-us" class="notSelected">English</option>
-          </select>
-  </div>`
-
+var listLang = document.getElementsByTagName("allLang").item(0).outerHTML.split(">")[0].split("=")[1].replace(/"/g, "").split(" ")
+let displayLangs = []
+let Langs = {
+  "zh-tw": {
+    "name": "繁體中文",
+    "value": "zh-tw",
+    seleted: true
+  },
+  "en-us": {
+    "name": "English",
+    "value": "en-us",
+    seleted: false
+  }
 }
+
+for (let i in listLang) {
+  let lang = Langs[listLang[i]]
+  let sele = 'selected'
+  let c = ""
+  if (!lang.seleted) {
+    sele = ''
+    c = "notSelected"
+  }
+  displayLangs.push(`<option class='${c}' value='${lang.value}' ${sele}>${lang.name}</option>`)
+}
+
+footer.outerHTML = `
+<div class="f" id="f">
+<input type="checkbox" name="tran" id="tran">
+          <label for="tran" title="協助翻譯"><span class="material-symbols-outlined" id="translateIcon">translate</span></label>
+          <div class="trans">
+            <h2 class="trantitle">想要幫助我們翻譯?</h2>
+            <div class="langs">
+            <p class="completeTitle">語言進度</p>
+            ${transLang.join("")}
+            </div>
+            <a href="https://catslovetw.github.io/zh-tw/關於/infoIndex.html" class="tranUrl">聯絡作者</a>
+          </div>
+<footer id="footer">
+  text
+</footer>
+<select id="language" class="language" onchange="changeLang(this)" title="選擇語言">
+        ${displayLangs.join()}
+        </select>
+</div>
+`
+
+// if (location.href.indexOf("%E5%85%89%E9%81%87%E8%A8%88%E7%AE%97%E6%A9%9F") != -1) {
+//   footer.outerHTML = `
+//   <div class="f" id="f">
+//   <input type="checkbox" name="tran" id="tran">
+//             <label for="tran" title="協助翻譯"><span class="material-symbols-outlined" id="translateIcon">translate</span></label>
+//             <div class="trans">
+//               <h2 class="trantitle">想要幫助我們翻譯?</h2>
+//               <div class="langs">
+//               <p class="completeTitle">語言進度</p>
+//               ${transLang.join("")}
+//               </div>
+//               <a href="https://catslovetw.github.io/zh-tw/關於/infoIndex.html" class="tranUrl">聯絡作者</a>
+//             </div>
+//   <footer id="footer">
+//     text
+//   </footer>
+//   <select id="language" class="language" onchange="changeLang(this)" title="選擇語言">
+//             <option value="zh-tw" selected>繁體中文</option>
+//           </select>
+//   </div>`
+// } else {
+//   footer.outerHTML = `
+//   <div class="f" id="f">
+//   <input type="checkbox" name="tran" id="tran">
+//             <label for="tran" title="協助翻譯"><span class="material-symbols-outlined" id="translateIcon">translate</span></label>
+//             <div class="trans">
+//               <h2 class="trantitle">想要幫助我們翻譯?</h2>
+//               <div class="langs">
+//               <p class="completeTitle">語言進度</p>
+//               ${transLang.join("")}
+//               </div>
+//               <a href="https://catslovetw.github.io/zh-tw/關於/infoIndex.html" class="tranUrl">聯絡作者</a>
+//             </div>
+//   <footer id="footer">
+//     text
+//   </footer>
+//   <select id="language" class="language" onchange="changeLang(this)" title="選擇語言">
+//             <option value="zh-tw" selected>繁體中文</option>
+//             <option value="en-us" class="notSelected">English</option>
+//           </select>
+//   </div>`
+
+// }
 footer = document.getElementById("footer")
 footer.innerText = footer.innerText.replace("text", `©${year} 此網站由貓咪建立`)
 
