@@ -1,0 +1,42 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>註冊</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="貓咪">
+        <meta name="description" content="貓貓ㄉ網站">
+        <link rel="stylesheet" href="../../menu.css">
+        <link rel="stylesheet" href="./reg.css">
+        <allLang value="zh-tw"></allLang>
+    </head>
+    <body>
+        <input type="checkbox" id="navbarToggle" checked="checked">
+        <header class="main-header">
+          </header>
+          <h1 class="title">註冊</h1>
+          <div class="body">
+            <div class="signMenu">
+                <div class="signTitle">
+                    <h1 class="MenuTitle">註冊帳號</h1>
+                </div>
+                <input type="text" name="name" class="c" placeholder="暱稱" style="margin-bottom: 10;">
+                <input type="email" name="email" class="c" placeholder="帳號" style="margin-bottom: 10;">
+                <input type="password" name="password" class="c" placeholder="密碼" style="margin-bottom: 10;">
+                <input type="password" name="again_password" class="c" placeholder="再次輸入密碼">
+                <div class="errorBox" id="errorBox" style="display: none;">
+                    <span class="material-symbols-outlined" id="back" onclick="document.getElementById('errorBox').style.display = 'none'">arrow_back</span>
+                    <span class="material-symbols-outlined error">error</span> 
+                    <p>資料錯誤!</p>
+                </div>
+                <br>
+                <input type="submit" value="註冊" onclick="submit()">
+                <p class="wait">已經註冊帳號? <a href="../log/log.html">登入</a></p>
+            </div>
+          </div>
+    </body>
+    <footer id="footer">
+        text
+    </footer>
+    <script src="./reg.js"></script>
+    <script src="../../menu.js"></script>
+</html>

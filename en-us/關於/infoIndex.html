@@ -1,46 +1,84 @@
 <html lang="zh-tw">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Info</title>
+        <title>關於</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="Cat">
-        <meta name="description" content="Cat's website">
+        <meta name="keywords" content="貓咪">
+        <meta name="description" content="貓貓ㄉ網站">
         <link rel="stylesheet" href="../menu.css">
         <link rel="stylesheet" href="./infoIndex.css">
+        <link rel="stylesheet" href="./menu.css">
+        <link rel="stylesheet" href="../錯誤/error.css">
+        <allLang value="zh-tw en-us"></allLang>
     </head>
     <body>
         <input type="checkbox" id="navbarToggle" checked="checked">
         <header class="main-header">
           </header>
           <h1 class="title">Info</h1>
-          <div class="body">
-            <h1 class="subtitle">About the author</h1>
-            <h2 class="link"><a class="url https://discord.com" href="">Discord - Cat1238756</a></h2>
-            <h2 class="link"><a class="url https://www.facebook.com/RiceCatUwU" href="">Facebook - Cat Aua</a></h2>
-            <h1 class="subtitle server"><a>About the server</a></h1>
-            <h2 class="sst version">Version: <version>[version]</version></h2>
-            <h2 class="sst create time">
-                Create Time:
-                <timetext><br>
-                2022/11/18
-                <br><timetext class="b">
-                ([time] ago)
-                </timetext>
-            </timetext></h2>
-            <h2 class="sst time">
-                Last change:
-                <timetext><br>
-                [date] [time] 
-                <timetext class="b">
-                ([day])
-            </timetext></timetext></h2>
-            <h2 class="sst time">Now time:<timetext><br>[time]</h2></timetext>
-        </div>
+          <div class="body" id="body">
+            <div class="lists">
+                <ul>
+                    <li onclick="chper()" title="About me" id="chperIcon">
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+                    </li>
+                    <li onclick="server()" title="About server" id="serverIcon">
+                        <span class="material-symbols-outlined">
+                            dns
+                        </span>
+                    </li>
+                    <li onclick="update()" title="Update Logs" id="updateIcon">
+                        <span class="material-symbols-outlined">
+                            update
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div id="chper" class="d">
+                <h1 class="subtitle">About me</h1>
+                <h2 class="link"><a class="url https://discord.com" href="">Discord - Cat1238756</a></h2>
+                <h2 class="link"><a class="url https://www.facebook.com/RiceCatUwU" href="">Facebook - Cat Aua</a></h2>
+            </div>
+            <div id="server" class="d" style="display: none">
+                <h1 class="subtitle server"><a>About server</a></h1>
+                <h2 class="sst versiontitle" onclick="getVersionBox(this)" title="Get Update Content">Version: <version>[version]</version></h2>
+                <h2 class="sst create time">
+                    Create time:
+                    <timetext><br>
+                    2022/11/18
+                    <br><timetext class="b">
+                    ([time] ago)
+                    </timetext>
+                </timetext></h2>
+                <h2 class="sst time">
+                    Last Change:
+                    <timetext><br>
+                    [date] [time] 
+                    <timetext class="b">
+                    ([day])
+                </timetext></timetext></h2>
+                <h2 class="sst time">Now Time:<timetext><br>[time]</h2></timetext>
+                <div id="errorBox">
+
+                </div>
+            </div>
+            <div id="update" class="d" style="display: none">
+                <div class="opacs">
+                    <h1 class="subtitle opac"><a>Update Logs</a></h1>
+                    <div id="updatesText">
+
+                    </div>
+                </div>
+            </div>
+    </div>
           </body>
     <footer id="footer">
         text
     </footer>
+    <script src="./infoIndex.js"></script>
+    <script src="./menu.js"></script>
     <script src="../menu.js"></script>
     <script src="../../language.js"></script>
-    <script src="./infoIndex.js"></script>
 </html>

@@ -1,0 +1,46 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>驗證碼確認</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="貓咪">
+        <meta name="description" content="貓貓ㄉ網站">
+        <link rel="stylesheet" href="../../menu.css">
+        <link rel="stylesheet" href="./reg.css">
+        <allLang value="zh-tw"></allLang>
+    </head>
+    <body>
+        <input type="checkbox" id="navbarToggle" checked="checked">
+        <header class="main-header">
+          </header>
+          <h1 class="title">驗證碼確認</h1>
+          <div class="body">
+            <div class="signMenu">
+                <div class="signTitle">
+                    <h1 class="MenuTitle">驗證碼確認</h1>
+                </div>
+                <div class="Textdiv">
+                    <p class="accoutText">為了確保帳戶安全<br>已經發送驗證碼至<br><a id="accout">[accout]</a></p>
+                </div>
+                <div class="numbers">
+                <input type="datetime" onkeydown="if (this.value.length > 0) {return this.value = this.value.slice(0, 0)}">
+                <input type="datetime" onkeydown="if (this.value.length > 0) {return this.value = this.value.slice(0, 0)}">
+                <input type="datetime" onkeydown="if (this.value.length > 0) {return this.value = this.value.slice(0, 0)}">
+                <input type="datetime" onkeydown="if (this.value.length > 0) {return this.value = this.value.slice(0, 0)}">
+            </div>
+                <div class="errorBox" id="errorBox" style="display: none;">
+                    <span class="material-symbols-outlined" id="back" onclick="document.getElementById('errorBox').style.display = 'none'">arrow_back</span>
+                    <span class="material-symbols-outlined error">error</span> 
+                    <p>驗證錯誤!</p>
+                </div>
+                <br>
+                <button id="check" onclick="submit()">確定</button>
+            </div>
+          </div>
+    </body>
+    <footer id="footer">
+        text
+    </footer>
+    <script src="./check.js"></script>
+    <script src="../../menu.js"></script>
+</html>

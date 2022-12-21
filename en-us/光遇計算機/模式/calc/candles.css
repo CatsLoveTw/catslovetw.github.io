@@ -1,0 +1,84 @@
+.send {
+    width:50%; 
+    height: 35px;
+    border-color: rgb(47, 255, 141);
+    border-width: 2px;
+}
+
+.reset {
+    width:50%; 
+    height: 35px;
+    border-color: rgb(255, 106, 106);
+    border-width: 2px;
+    position: relative;
+    left: 50%; 
+    bottom: 35;
+    margin-bottom: -20;
+}
+
+.c {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    display: flex;
+}
+
+input[type="checkbox"].a::before {
+    content: '普通蠟燭';
+    white-space: nowrap;
+    color: rgb(255, 67, 67);
+    font-size: 20px;
+    position: relative;
+    bottom: 5px;
+    font-weight: bold;
+    left:30px;
+    display: block;
+}
+
+input[type="checkbox"].b::before {
+    content: '季節蠟燭';
+    white-space: nowrap;
+    color: rgb(255, 67, 67);
+    font-size: 20px;
+    position: relative;
+    bottom: 5px;
+    font-weight: bold;
+    left:30px;
+    display: block;
+}
+
+input[type="checkbox"].c::before {
+    content: '愛心';
+    white-space: nowrap;
+    color: rgb(255, 67, 67);
+    font-size: 20px;
+    position: relative;
+    bottom: 5px;
+    font-weight: bold;
+    left:30px;
+    display: block;
+}
+
+input[type="checkbox"].a:checked::before {
+    color:rgb(0, 255, 42)
+}
+
+input[type="checkbox"].b:checked::before {
+    color:rgb(0, 255, 42)
+}
+
+input[type="checkbox"].c:checked::before {
+    color:rgb(0, 255, 42)
+}
+
+input[type="radio"] {
+    width: 18;
+    display: block;
+}
+
+input[type="radio"]:not([class="top"]) {
+    margin-top: -15;
+}

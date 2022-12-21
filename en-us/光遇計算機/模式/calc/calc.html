@@ -1,0 +1,65 @@
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>光遇計算機</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="貓咪">
+        <meta name="description" content="貓貓ㄉ網站">
+        <link rel="stylesheet" href="../../../menu.css">
+        <link rel="stylesheet" href="../../SkyCalc.css">
+        <link rel="stylesheet" href="./candles.css">
+        <allLang value="zh-tw"></allLang>
+    </head>
+    <body>
+        <input type="checkbox" id="navbarToggle" checked="checked">
+        <header class="main-header">
+          </header>
+          <h1 class="title">光遇計算機</h1>
+          <div class="body">
+            <h2 style="text-align: center;">光遇計算機 - 進階計算</h1>
+            <div class="divs">
+                <p style="font-size: 25px;">選項:</p>
+                    <input type="checkbox" class="checkbox a" id="candles" onchange="test(this)">
+                    <input type="checkbox" class="checkbox b" id="seasonCandles" onchange="test(this)">
+                    <input type="checkbox" class="checkbox c" id="love" onchange="test(this)">
+            </div>
+            <div class="divs">
+                <p>選擇目標:</p>
+                <form>
+                    <input type="radio" class="top" id="candles">
+                    <input type="radio" id="seasonCandles">
+                    <input type="radio" id="love">
+                </form>
+            </div>
+            <div class="result">
+              <select class="changeMode" id="changeMode" onchange="changeMode(this.value)"></select>
+              <p>結果:</p>
+              <p class="result-text">無</p>  
+            </div>
+            <div class="divs">
+                <p>輸入目前持有蠟燭</p>
+                <input class="input c" type="text" id="now_candles">
+            </div>
+            <div class="divs">
+                <p>輸入目前持有愛心</p>
+                <input class="input c" type="text" id="candles">
+            </div>
+            <div class="divs">
+                <p>輸入</p>
+                <input class="input c" type="text" id="days">
+            </div>
+            <div class="divs op">
+                <p>操作:</p>
+                <button class="btnOperation send" onclick="send()">送出</button>
+                <button class="btnOperation reset" onclick="reset()">重製</button>
+            </div>
+            </body>
+        </div>
+    <footer id="footer">
+        text
+    </footer>
+    <script src="../../../menu.js"></script>
+    <script src="../../../../language.js"></script>
+    <script src="../../SkyCalc.js"></script>
+    <script src="./candles.js"></script>
+</html>
