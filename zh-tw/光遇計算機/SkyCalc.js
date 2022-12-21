@@ -24,23 +24,23 @@ function transfer(text) {
 
 const alls = {
     "SkyCalc": {
-        "value": "nope",
+        "value": 'nope',
         "display": "無",
-        "href": "SkyCalc.html"
+        "href": 'SkyCalc.html'
     },
     "optg": {
         "1": {
             "display": "普通",
             "opts": {
                 "candles-day": {
-                    "value": "candles-day",
+                    "value": 'candles-day',
                     "display": "計算所需天數",
-                    "href": "模式/candles-day/candles-day.html"
+                    "href": '模式/candles-day/candles-day.html'
                 },
                 "candles": {
-                    "value": "candles",
+                    "value": 'candles',
                     "display": "計算每日所需蠟燭",
-                    "href": "模式/candles-candles/candles.html"
+                    "href": '模式/candles-candles/candles.html'
                 }
             }
         },
@@ -48,14 +48,14 @@ const alls = {
             "display": "季節蠟燭",
             "opts": {
                 "season-candles-day": {
-                    "value": "season-candles-day",
+                    "value": 'season-candles-day',
                     "display": "計算所需天數",
-                    "href": "模式/season-candles-day/candles-day.html"
+                    "href": '模式/season-candles-day/candles-day.html'
                 },
                 "season-candles": {
-                    "value": "season-candles",
+                    "value": 'season-candles',
                     "display": "計算每日所需季節蠟燭",
-                    "href": "模式/season-candles-candles/candles.html"
+                    "href": '模式/season-candles-candles/candles.html'
                 }
             }
         },
@@ -63,22 +63,22 @@ const alls = {
             "display": "愛心計算",
             "opts": {
                 "love-day": {
-                    "value": "love-day",
+                    "value": 'love-day',
                     "display": "計算所需天數",
-                    "href": "模式/love-day/love-day.html"
+                    "href": '模式/love-day/love-day.html'
                 },
                 "love": {
-                    "value": "love",
+                    "value": 'love',
                     "display": "計算每日所需愛心",
-                    "href": "模式/love-love/love-love.html"
+                    "href": '模式/love-love/love-love.html'
                 },
             }
         }
     },
     "calc": {
         "value": "calc",
-        "display": "綜合計算",
-        "href": "模式/error/error.html",
+        "display": '綜合計算',
+        "href": '模式/error/error.html',
         "disable": false
     }
 }
@@ -143,9 +143,12 @@ function loadOption() {
     console.log(all, "v: ", value)
     let index = 0
     for (let i in all) {
-        if (all[i].indexOf(value) != -1) {
-            index = i
-        }
+        try {
+            console.log(all[i].split("value=")[1].split(">")[0].replace(/"/g, ""));
+            if (all[i].split("value=")[1].split(">")[0].replace(/"/g, "") == value) {
+                index = i
+            }
+        } catch {}
     }
     all[index] = all[index].replace('">', '" selected>')
     change.innerHTML = all.join("")

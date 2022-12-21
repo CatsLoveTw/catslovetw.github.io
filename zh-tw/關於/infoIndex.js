@@ -1,6 +1,6 @@
-let Rdate = "2022/12/18"
-let Rtime = "22:16:23"
-let Version = "1.0.38_pre3"
+let Rdate = "2022/12/21"
+let Rtime = "14:13:28"
+let Version = "1.0.38_pre4"
 
 
 const date = new Date()
@@ -131,6 +131,13 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 function getUpdate() {
     const allUpdates = {
         "V1.0.38": {
+            "V1.0.38_pre4": {
+                1: {
+                    "title": "修復",
+                    "website": "光遇計算機",
+                    "updates": ["修復光遇計算機特定模式時 模式選項顯示錯誤之問題"]
+                }
+            },
             "V1.0.38_pre3": {
                 1: {
                     "title": "修復",

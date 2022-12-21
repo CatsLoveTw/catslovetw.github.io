@@ -6,6 +6,7 @@
         <meta name="keywords" content="貓咪">
         <meta name="description" content="貓貓ㄉ網站">
         <link rel="stylesheet" href="../menu.css">
+        <allLang value="zh-tw"></allLang>
     </head>
     <body>
         <input type="checkbox" id="navbarToggle" checked="checked">
