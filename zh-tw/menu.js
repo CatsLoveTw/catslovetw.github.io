@@ -98,8 +98,7 @@ menu.innerHTML = `
       ${pathes}  
     </ul>
   </nav>
-  <label for="navbarToggle"><span class="material-icons">expand_more</span></label>
-</div>
+  </div>
 `
 
 

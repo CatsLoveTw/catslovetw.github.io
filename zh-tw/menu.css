@@ -56,66 +56,6 @@ body {
   bottom: -22px;
 }
 
-/* .body {
-  width: auto;
-  position: sticky;
-  transform: translateY(-350%);
-  transition: 1.15s;
-}
-
-#navbarToggle:checked~.body {
-  transform: translateY(-100%);
-} */
-
-#navbarToggle {
-  display: none;
-  /*不顯示 (靠label checked) */
-}
-
-#navbarToggle:checked~.main-header {
-  transform: translateY(-10%)
-}
-
-#navbarToggle:checked~footer {
-  transform: translateY(250%);
-}
-
-label[for="navbarToggle"] {
-  color: #fff;
-  /*設定圖示顏色*/
-  display: none;
-  /*保留上下外邊距/內邊距*/
-  background-color: #e51520;
-  /*設定顏色*/
-  position: absolute;
-  /*絕對定位 (會根據視窗大小改變)*/
-  width: auto;
-  bottom: 0;
-  /*設定高度*/
-  transform: translateY(100%);
-  border-radius: 0 0 6.5px 6.5px;
-  /*圓角設定*/
-  cursor: pointer;
-  /*滑鼠改變*/
-}
-
-
-#navbarToggle:checked~.main-header label {
-  background-color: #16d02e;
-}
-
-.material-icons {
-  transform: rotate(0);
-  /*如果navbarToggle沒有激活 轉動至0度*/
-  transition: 0.85s;
-  /*動畫(0.85s)*/
-}
-
-#navbarToggle:checked~.main-header .material-icons {
-  transform: rotate(1260deg);
-  /*如果navbarToggle is checked - 轉動 material-icons 1260度*/
-}
-
 .main-header {
   width: 100%;
   /*寬度100%*/
@@ -123,7 +63,7 @@ label[for="navbarToggle"] {
   background-image: linear-gradient(to right, rgb(128, 128, 128),rgb(104, 104, 104) ,rgb(14, 14, 14)); 
   /* background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 166, 0), rgb(255, 238, 0), rgb(102, 255, 0), rgb(0, 119, 255), rgb(119, 0, 255), rgb(174, 0, 255)); */
   position: relative;
-  transform: translateY(-100%);
+  transform: translateY(-10%);
   /*預設 / 如果navbarToggle未激活 Y設為-100%*/
   transition: 1s;
   /*帶動Y=0 / Y=-100%時 動畫時間=1s*/
