@@ -42,5 +42,5 @@ function submit (a) {
     } else if (email.trim().split("@")[1].length <= 4) {
         return errorBox.style.display = "block"
     }
-    return location.href = go(`/zh-tw/帳號/check-accout/check.html?name=${name},email=${email},password=${password}`)
+    return location.href = go(`/beta-test/帳號/check-accout/check.html?name=${name},email=${email},password=${password}`)
 }
