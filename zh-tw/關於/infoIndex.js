@@ -1,6 +1,6 @@
-let Rdate = "2022/12/21"
-let Rtime = "14:13:28"
-let Version = "1.0.38_pre4"
+let Rdate = "2022/12/25"
+let Rtime = "13:20:18"
+let Version = "1.0.39_pre1"
 
 
 const date = new Date()
@@ -130,6 +130,15 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 // 取得更新
 function getUpdate() {
     const allUpdates = {
+        "V1.0.39": {
+            "V1.0.39_pre1": {
+                1: {
+                    "title": "更新",
+                    "website": "光遇計算機-普通蠟燭 光遇計算機-季節蠟燭 光遇計算機-愛心",
+                    "updates": ['新增 "包含昨天" 選項(講解請看選項旁的問號)']
+                }   
+            }
+        },
         "V1.0.38": {
             "V1.0.38_pre4": {
                 1: {

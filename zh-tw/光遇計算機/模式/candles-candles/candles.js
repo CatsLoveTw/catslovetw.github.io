@@ -51,8 +51,15 @@ function send () {
             let c = candles - nowCandles // 差多少根蠟燭
             let ca = Number(nowCandles)
             let DayOfcandles = Number(Math.ceil(c / days))
+            if (document.getElementById("today").checked) {
+                DayOfcandles = Number(Math.ceil(c / (Number(days)+1)))
+            }
+            let ia = 0
+            if (document.getElementById("today").checked) {
+                ia = -1
+            }
             console.log(c, ca, DayOfcandles, days)
-            for (let i = 0; i < days; i++) {
+            for (let i = ia; i < days; i++) {
                 console.log("awa", days, getNowTime())
                 if (DayOfcandles + Number(ca) >= candles) {
                     let a = candles - ca

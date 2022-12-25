@@ -19,3 +19,48 @@
 .c {
     width: 100%;
 }
+
+#today {
+    display: none;
+}
+
+label span.material-symbols-outlined {
+    font-size: 45px;
+    color: red;
+    cursor: pointer;
+    display: block;
+}
+
+label span.on {
+    color: green;
+    display: none;
+}
+
+#today:checked~label span.off {
+    display: none;
+}
+
+#today:checked~label span.on {
+    display: block;
+}
+
+p.indu {
+    font-size: 25px;
+    position: relative;
+    margin-bottom: -45px;
+    bottom: 50px;
+    left: 50px;
+}
+
+p a {
+    font-size: calc(25px / 1.3);
+    color: gray;
+    position: relative;
+    bottom: 2px;
+    left: 3px;
+    cursor: pointer;
+}
+
+p a:hover {
+    color: rgb(49, 49, 49)
+}

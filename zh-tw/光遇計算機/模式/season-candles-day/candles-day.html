@@ -22,6 +22,12 @@
               <p class="result-text">無</p>  
             </div>
             <div class="divs">
+                <input type="checkbox" id="today">
+                <label for="today"><span class="material-symbols-outlined off">toggle_off</span></label>
+                <label for="today"><span class="material-symbols-outlined on">toggle_on</span></label>
+                <p class="indu">包含昨天<a title="考慮到國際服蠟燭刷新時間並非晚上12點整，如果今天蠟燭還未刷新(昨天的蠟燭還未跑完)，可以開啟此選項。">?</a></p>
+            </div>
+            <div class="divs">
                 <p>輸入目前持有季蠟</p>
                 <input class="input c" type="text" id="now_candles">
             </div>
@@ -31,7 +37,7 @@
             </div>
             <div class="divs">
                 <p>輸入每天增加季蠟量 小於7</p>
-                <input class="input c" type="text" id="addCandles">
+                <input class="input c" type="number" id="addCandles" max="6" min="1" onchange="if (this.value > 6) {this.value = 6};if (this.value < 1) {this.value = 1}">
             </div>
             <div class="divs op">
                 <p>操作:</p>

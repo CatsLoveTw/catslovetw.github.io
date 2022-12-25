@@ -50,14 +50,28 @@ function send () {
             cheak = confirm("偵測到數值相差過大，可能會需要運算一段時間，是否繼續?")
         }
         if (cheak) {
-            for (let i = 0; i < res; i++) {
-                if (res - i == 1 && (ca + Number(addCandles)) > Number(candles)) {
+            let ia = 0
+            if (document.getElementById("today").checked) {
+                ia = -1
+            }
+            let alldays = res
+            for (let i = ia;i < res; i++) {
+                if (res - i == 1 || (ca + Number(addCandles)) > Number(candles)) {
                     let a = Number(candles)
                     let b = a - ca
-                    list.push(`第 ${i + 1} 天: ${candles}根蠟燭 (+${b})`)
+                    if (b <= 0) {
+                        alldays--
+                    } else {
+                        list.push(`第 ${i + 1} 天: ${candles}根蠟燭 (+${b})`)
+                    }
+                    break;
                 } else {
                     ca += Number(addCandles)
-                    list.push(`第 ${i + 1} 天: ${ca}根蠟燭 (+${addCandles})`)
+                    if (ca <= 0) {
+                        alldays--
+                    } else {
+                        list.push(`第 ${i + 1} 天: ${ca}根蠟燭 (+${addCandles})`)
+                    }
                 }
             }
             let date = new Date()
@@ -65,11 +79,11 @@ function send () {
                 this.setDate(this.getDate() + days);
                 return this;
             }
-            let v = new Date(getNowTime()).addDays(res)
+            let v = new Date(getNowTime()).addDays(alldays)
             let nowtime = v.getFullYear() + "/" + String(v.getMonth() + 1) + "/" + String(v.getDate());
             let now = `${nowtime.split(" ")[0]}`
 
-            result.innerHTML = "總共需要 " + res + " 天 " + "(預計到" + now + ")" + `<br>${list.join("<br>")}`
+            result.innerHTML = "總共需要 " + alldays + " 天 " + "(預計到" + now + ")" + `<br>${list.join("<br>")}`
         } else {
             alert("取消成功!")
         }

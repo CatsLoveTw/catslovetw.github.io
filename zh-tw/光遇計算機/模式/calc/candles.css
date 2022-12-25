@@ -70,7 +70,7 @@ input[type="checkbox"].b:checked::before {
     color:rgb(0, 255, 42)
 }
 
-input[type="checkbox"].c:checked::before {
+input[type="checkbox"].c:checked::before{
     color:rgb(0, 255, 42)
 }
 

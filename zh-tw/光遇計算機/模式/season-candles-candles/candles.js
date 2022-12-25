@@ -54,6 +54,13 @@ function send () {
             let c = candles - nowCandles // 差多少根蠟燭
             let ca = Number(nowCandles)
             let DayOfcandles = Number(Math.ceil(c / days))
+            if (document.getElementById("today").checked) {
+                DayOfcandles = Number(Math.ceil(c / (Number(days)+1)))
+            }
+            let ia = 0
+            if (document.getElementById("today").checked) {
+                ia = -1
+            }
             if (DayOfcandles > addCandles) {
                 adds = true
                 let add = DayOfcandles - addCandles
@@ -65,7 +72,7 @@ function send () {
                 }
             }
             console.log(c, ca, DayOfcandles, days)
-            for (let i = 0; i < days; i++) {
+            for (let i = ia; i < days; i++) {
                 console.log("awa", days, getNowTime())
                 if (DayOfcandles + Number(ca) >= candles && !adds) {
                     let a = candles - ca
@@ -81,6 +88,9 @@ function send () {
                 } if (DayOfcandles + Number(ca) >= candles && adds) {
                     let a = candles - ca
                     let chDAY = days - beforeDay
+                    if (document.getElementById("today").checked) {
+                        chDAY++
+                    }
                     days = i + 1
                     list.push(`第 ${i + 1} 天: ${candles}根蠟燭 (+${a})`)
                     let v = new Date(getNowTime()).addDays(days)
