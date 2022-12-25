@@ -166,6 +166,23 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 // 取得更新
 function getUpdate() {
     const allUpdates = {
+        "V1.0.39": {
+            "V1.0.39_pre1 For English": {
+                1: {
+                    "title": "Adjust",
+                    "website": "Info Error",
+                    "updates": ["Adjust website footerSize"]
+                }
+            },
+            "V1.0.39_pre1": {
+                disable: true,
+                1: {
+                    "title": "更新",
+                    "website": "光遇計算機-普通蠟燭 光遇計算機-季節蠟燭 光遇計算機-愛心",
+                    "updates": ['新增 "包含昨天" 選項(講解請看選項旁的問號)']
+                }   
+            }
+        },
         "V1.0.38": {
             "V1.0.38_pre4 For English": {
                 1: {
