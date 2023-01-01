@@ -22,10 +22,55 @@
                     <p class="accoutText">為了確保帳戶安全<br>已經發送驗證碼至<br><a id="accout">[accout]</a></p>
                 </div>
                 <div class="numbers">
-                <input type="datetime" onkeydown="if (this.value.length > 0) {return this.value = this.value.slice(0, 0)}">
-                <input type="datetime" onkeydown="if (this.value.length > 0) {return this.value = this.value.slice(0, 0)}">
-                <input type="datetime" onkeydown="if (this.value.length > 0) {return this.value = this.value.slice(0, 0)}">
-                <input type="datetime" onkeydown="if (this.value.length > 0) {return this.value = this.value.slice(0, 0)}">
+                <script>
+                    const allNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+                    function checkNumber (text) {
+                        for (let num of allNumbers) {
+                            if (text.indexOf(num) != -1) {
+                                return true
+                            }
+                        }
+                        return false
+                    }
+                </script>
+                <input type="datetime" id="n1" onkeyup="if (!checkNumber(this.value)) {this.value = ''};">
+                <input type="datetime" id="n2" onkeyup="if (!checkNumber(this.value)) {this.value = ''};" onkeydown="if (this.value.length > 0) {this.value = this.value.slice(0, 0)};">
+                <input type="datetime" id="n3" onkeyup="if (!checkNumber(this.value)) {this.value = ''};" onkeydown="if (this.value.length > 0) {this.value = this.value.slice(0, 0)};">
+                <input type="datetime" id="n4" onkeyup="if (!checkNumber(this.value)) {this.value = ''};" onkeydown="if (this.value.length > 0) {this.value = this.value.slice(0, 0)};">
+                <script>
+                    document.getElementById("n1").addEventListener("keydown", (event) => {
+                        let h = document.getElementById("n1")
+                        if (event.key.toLowerCase() != "tab" && event.key.toLowerCase() != "backspace") {
+                            if (h.value.length > 0) {
+                                h.value = h.value.slice(0, 0)
+                            };
+                        }
+                    })
+                    document.getElementById("n2").addEventListener("keydown", (event) => {
+                        let h = document.getElementById("n2")
+                        if (event.key.toLowerCase() != "tab" && event.key.toLowerCase() != "backspace") {
+                            if (h.value.length > 0) {
+                                h.value = h.value.slice(0, 0)
+                            };
+                        }
+                    })
+                    document.getElementById("n3").addEventListener("keydown", (event) => {
+                        let h = document.getElementById("n3")
+                        if (event.key.toLowerCase() != "tab" && event.key.toLowerCase() != "backspace") {
+                            if (h.value.length > 0) {
+                                h.value = h.value.slice(0, 0)
+                            };
+                        }
+                    })
+                    document.getElementById("n4").addEventListener("keydown", (event) => {
+                        let h = document.getElementById("n4")
+                        if (event.key.toLowerCase() != "tab" && event.key.toLowerCase() != "backspace") {
+                            if (h.value.length > 0) {
+                                h.value = h.value.slice(0, 0)
+                            };
+                        }
+                    })
+                </script>
             </div>
                 <div class="errorBox" id="errorBox" style="display: none;">
                     <span class="material-symbols-outlined" id="back" onclick="document.getElementById('errorBox').style.display = 'none'">arrow_back</span>

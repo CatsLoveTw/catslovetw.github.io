@@ -110,7 +110,7 @@ var footer = document.getElementById("footer")
 let langSupports = {
   'zh-tw': {name: 'Chinese-Traditional', comp: '100%', path: 'index.html'},
   'en-us': {name: 'English', comp: '65%', path: 'en-us/index.html'},
-  'zh-cn': {name: 'Chinese-China', comp: '0%', path: 'en-us/錯誤/errorwebsite.html'},
+  'zh-cn': {name: 'Chinese-Simplified', comp: '0%', path: 'en-us/錯誤/errorwebsite.html'},
   'jp': {name: 'Japanese', comp: '0%', path: 'en-us/錯誤/errorwebsite.html'}
 }
 let transLang = []

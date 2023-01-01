@@ -99,7 +99,7 @@ input[type="submit"]:hover {
 
 #back {
     position: absolute;
-    color: rgb(255, 255, 255);
+    color: rgb(206, 206, 206);
     left: 10;
     top: 20;
     cursor: pointer;
@@ -107,4 +107,15 @@ input[type="submit"]:hover {
 
 #back:hover {
     color: rgb(200, 200, 200);
+}
+.typeError {
+    margin: -4px;
+    font-size: 13px;
+    position: relative;
+    bottom: 6px;
+    text-align: left;
+    left: 45px;
+    color: red;
+    font-weight: bold;
+    display: none;
 }

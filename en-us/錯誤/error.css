@@ -10,11 +10,11 @@ body {
   font-size: 13px;
   background-image: linear-gradient(to bottom, rgb(212, 209, 209), rgb(112, 112, 112));
   text-align: center;
-  margin: -30 0 0 0;
+  margin: -80 0 0 0;
 }
 
 .errortext {
-  transform: translateY(200%);
+  transform: translateY(10%);
   margin: 20 0 0 0;
 }
 

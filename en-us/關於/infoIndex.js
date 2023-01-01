@@ -1,6 +1,6 @@
 let Rdate = "2022/12/21"
 let Rtime = "15:26:59"
-let Version = "1.0.38_pre4 For English"
+let Version = "1.0.39_pre1 For English"
 
 
 const date = new Date()
@@ -166,6 +166,16 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 // 取得更新
 function getUpdate() {
     const allUpdates = {
+        "V1.0.4": {
+            "V1.0.4_pre1": {
+                disable: true,
+                1: {
+                    "title": "更新",
+                    "website": "全部",
+                    "updates": ["視窗縮小時改變選單樣式"]
+                }
+            }
+        },
         "V1.0.39": {
             "V1.0.39_pre1 For English": {
                 1: {

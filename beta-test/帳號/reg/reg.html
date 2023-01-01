@@ -18,10 +18,14 @@
                 <div class="signTitle">
                     <h1 class="MenuTitle">註冊帳號</h1>
                 </div>
-                <input type="text" name="name" class="c" placeholder="暱稱" style="margin-bottom: 10;">
-                <input type="email" name="email" class="c" placeholder="帳號" style="margin-bottom: 10;">
-                <input type="password" name="password" class="c" placeholder="密碼" style="margin-bottom: 10;">
-                <input type="password" name="again_password" class="c" placeholder="再次輸入密碼">
+                <input type="text" name="name" class="c" placeholder="暱稱" style="margin-bottom: 10;" onkeyup="check('name')">
+                    <p class="typeError" id="nameError">名稱長度必須大於3個字!</p>
+                <input type="email" name="email" class="c" placeholder="帳號" style="margin-bottom: 10;" onkeyup="check('accout')">
+                    <p class="typeError" id="emailError">帳號形式錯誤!</p>
+                <input type="password" name="password" class="c" placeholder="密碼" style="margin-bottom: 10;" onkeyup="check('password'); check('againPassword')">
+                    <p class="typeError" id="passwordError">密碼必須大於8個字，必須包含數字與英文!</p>
+                <input type="password" name="again_password" class="c" placeholder="再次輸入密碼" onkeyup="check('againPassword')">
+                    <p class="typeError" id="againPasswordError" style="bottom: -5px;">輸入錯誤!</p>
                 <div class="errorBox" id="errorBox" style="display: none;">
                     <span class="material-symbols-outlined" id="back" onclick="document.getElementById('errorBox').style.display = 'none'">arrow_back</span>
                     <span class="material-symbols-outlined error">error</span> 

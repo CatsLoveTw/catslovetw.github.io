@@ -80,6 +80,7 @@ const menu = document.getElementsByClassName("main-header").item(0)
 const getTitle = document.getElementsByClassName("title").item(0)
 
 let pathes = ''
+let Subpathes = ''
 for (let i in pages.href) {
   let index = url(pages.href[i].path)
     if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
@@ -90,15 +91,51 @@ for (let i in pages.href) {
   }
 }
 
-menu.innerHTML = `
+for (let i in pages.href) {
+  let index = url(pages.href[i].path)
+  if (pages.href[i] == pages.href["..."]) { 
+    let otherpages = pages.href[i].submenu
+    for (let j in otherpages) {
+      let index = url(otherpages[j].path)
+      if (otherpages[j].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == otherpages[j].title) {
+        index = ""
+        Subpathes += `<li class="now"><a href="${index}" title="${otherpages[j].settitle}">${j}</a></li>`
+      } else {
+        Subpathes += `<li class="after"><a href="${index}" title="${otherpages[j].settitle}">${j}</a></li>`
+    }
+    }
+  } else {
+    if (pages.href[i].title == getTitle.innerHTML || transfer(window.location.href.split("#")[1]) == pages.href[i].title) {
+      index = ""
+      Subpathes += `<li class="now"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+    } else {
+      Subpathes += `<li class="after"><a href="${index}" title="${pages.href[i].settitle}">${i}</a></li>`
+  }
+}
+}
+let gethome = window.location.href.split("//")[0] + "//"
+gethome = gethome + window.location.href.replace(gethome, '').split("/")[0]
+
+menu.outerHTML = `
+<input type="checkbox" name="menu" id="menu">
+<header class="main-header">
+  <label for="menu"><span class="material-symbols-outlined">menu</span></label>
+  <label for="menu" class="close"><span class="material-symbols-outlined">close</span></label>
+  <a id="backHome" href="${gethome}"><span class="material-symbols-outlined">home</span></a>
 <div class="container">
-  <h1><a href="" class="h">${getTitle.innerHTML}</a></h1>
+  <div class="webtitle">
+    <h1><a href="" class="h">${getTitle.innerHTML}</a></h1>
+  </div>
   <nav>
     <ul class="main-menu">
-      ${pathes}  
+      ${pathes}
+    </ul>
+    <ul class="main-menu sub">
+      ${Subpathes}
     </ul>
   </nav>
   </div>
+  </header>
 `
 
 
@@ -169,8 +206,7 @@ menu.innerHTML = `
 //     <label for="navbarToggle"><span class="material-icons">expand_more</span></label>
 //   </div>
 // `
-// }
-getTitle.innerHTML = ""
+// 
 } catch {}
 
 
@@ -293,7 +329,7 @@ footer.outerHTML = `
 
 // }
 footer = document.getElementById("footer")
-footer.innerText = footer.innerText.replace("text", `©${year} 此網站由貓咪建立`)
+footer.innerText = footer.innerText.replace("text", `©2022-${year} 此網站由貓咪建立`)
 
 // 傳送門專用
 try {
@@ -324,3 +360,9 @@ try {
   `
 } catch {}
 
+// 偵測所在區域為主頁 (width: 500px)
+console.log(document.getElementsByClassName("title").item(0).innerHTML)
+if (document.getElementsByClassName("title").item(0).innerHTML == "首頁") {
+  document.getElementById("backHome").style.color = "#16d02e"
+}
+document.getElementsByClassName("title").item(0).innerHTML = ""

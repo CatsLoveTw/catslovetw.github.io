@@ -27,12 +27,3 @@ body {
   -webkit-text-stroke: 1.5px rgb(0, 0, 0);
 }
 
-
-footer {
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 20px;
-  margin: -102 0 0 0;
-  text-align: center;
-  background-color: gray;
-  color: antiquewhite;
-}

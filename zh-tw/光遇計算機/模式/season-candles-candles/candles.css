@@ -24,14 +24,14 @@
     display: none;
 }
 
-label span.material-symbols-outlined {
+label:not([for="menu"]) span.material-symbols-outlined {
     font-size: 45px;
     color: red;
     cursor: pointer;
     display: block;
 }
 
-label span.on {
+label:not([for="menu"]) span.on {
     color: green;
     display: none;
 }

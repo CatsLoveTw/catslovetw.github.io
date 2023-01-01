@@ -62,11 +62,10 @@ body {
   height: 85px;
   background-image: linear-gradient(to right, rgb(128, 128, 128),rgb(104, 104, 104) ,rgb(14, 14, 14)); 
   /* background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 166, 0), rgb(255, 238, 0), rgb(102, 255, 0), rgb(0, 119, 255), rgb(119, 0, 255), rgb(174, 0, 255)); */
-  position: relative;
-  transform: translateY(-10%);
+  position: sticky;
+  z-index: 99999;
+  top: 0;
   /*預設 / 如果navbarToggle未激活 Y設為-100%*/
-  transition: 1s;
-  /*帶動Y=0 / Y=-100%時 動畫時間=1s*/
 }
 
 .main-header h1 {
@@ -81,6 +80,10 @@ body {
   margin: 15 0 0 0;
   /*排版 (右)*/
   position: relative;
+}
+
+.main-menu.sub {
+  display: none;
 }
 
 .main-menu li {
@@ -156,11 +159,11 @@ body {
   color: rgb(0, 60, 255);
   width: auto;
   font-weight: bold;
-  position: relative;
-  float: right;
+  position: fixed;
   left: auto;
   height: 25px;
-  bottom: -67px;
+  bottom: 8px;
+  right: 0;
 }
 
 .notSelected {
@@ -179,8 +182,8 @@ label #translateIcon {
   font-size: 13px;
   background-color: #a3a3a3;
   color: white;
-  position: absolute;
-  transform: translateY(calc(113px - var(--border-weight) * 2));
+  position: fixed;
+  bottom: 8px;
   left: 10;
   cursor: pointer;
   z-index: 10000;
@@ -203,8 +206,8 @@ label #translateIcon:hover {
 .trans {
   display: none;
   border: 1px solid rgb(155, 155, 155);
-  position: absolute;
-  transform: translateY(-150px);
+  position: fixed;
+  bottom: 10px;
   left: 50;
   width: 240;
   background-color: rgb(228, 228, 228);
@@ -299,7 +302,6 @@ label #translateIcon:hover {
 
 
 footer {
-  position: relative;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   transform: translateY(0);
   transition: 1.15s;
@@ -308,7 +310,158 @@ footer {
   padding-bottom: 10px;
   font-size: 17px;
   text-align: center;
-  bottom: -100px;
   background-color: gray;
   color: antiquewhite;
+  position: fixed;
+  bottom: 0px;
+  width: calc(100% - 20px);
+  font-size: 15px;
+}
+
+label[for="menu"] {
+  display: none;
+}
+
+#menu {
+  display: none;
+}
+
+#backHome {
+  display: none;
+}
+
+label[for="menu"].close {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media screen and (max-width: 700px) {
+  label[for="menu"] {
+    transition: visibility 0.65s, opacity 0.65s linear;
+    visibility: visible;
+    opacity: 1;
+    width: 40px;
+    display: block;
+    position: absolute;
+    transform: translateX(10px);
+    top: 20px;
+    z-index: 10001;
+    cursor: pointer;
+  }
+  label[for="menu"]:hover span {
+    color: rgb(180, 180, 180);
+  }
+  label[for="menu"] span {
+    color: white;
+    font-size: 40px;
+    transition: 0.25s;
+  }
+  .container .h {
+    position: relative;
+    top: 5;
+  }
+  .container .h::after {
+    position: absolute;
+    top: 20px;
+  }
+
+  .container {
+    display: block;
+    width: 200;
+    text-align: center;
+  }
+  .main-header .main-menu {
+    display: block;
+    position: absolute;
+    width: 80%;
+    left: 0px;
+    top: 80px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.65s linear;
+  }
+
+  .main-header .main-menu li {
+    position: relative;
+    width: 100%;
+    text-align: left;
+  }
+
+  .main-header .main-menu li::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    background-color: #919191;
+  }
+
+  .main-header .main-menu>li:hover::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    background-color: #919191;
+  }
+
+  .main-header {
+    transition: 1s;
+    transform: translateY(0);
+    position: relative;
+    top: 0;
+    z-index: 10000;
+  }
+
+  .main-menu {
+    display: none;
+  }
+
+  .main-menu.sub {
+    display: block;
+  }
+
+  #backHome {
+    display: block;
+    position: absolute;
+    right: 10;
+    top: 20;
+    color: white;
+  }
+
+  #backHome span {
+    font-size: 40px;
+  }
+
+  #menu:checked~.main-header {
+    position: absolute;
+    top: 0px;
+    height: calc(100% - 40px);
+    opacity: 0.99;
+  }
+
+  #menu:checked~.main-header::before {
+    content: "";
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(59, 59, 59);
+    background-image: none;
+  }
+
+  #menu:checked~.main-header label[for="menu"] {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  #menu:checked~.main-header [for="menu"].close {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #menu:checked~.main-header .main-menu.sub {
+    visibility: visible;
+    opacity: 1;
+  }
 }
