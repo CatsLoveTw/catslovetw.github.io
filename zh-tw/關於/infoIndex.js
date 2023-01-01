@@ -1,5 +1,5 @@
-let Rdate = "2022/12/25"
-let Rtime = "13:20:18"
+let Rdate = "2022/1/1"
+let Rtime = "16:40:36"
 let Version = "1.0.4_pre1"
 
 
