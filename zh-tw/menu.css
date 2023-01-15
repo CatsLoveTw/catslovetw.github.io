@@ -316,6 +316,7 @@ footer {
   bottom: 0px;
   width: calc(100% - 20px);
   font-size: 15px;
+  opacity: 0.8;
 }
 
 label[for="menu"] {
@@ -335,7 +336,7 @@ label[for="menu"].close {
   opacity: 0;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 10000px) {
   label[for="menu"] {
     transition: visibility 0.65s, opacity 0.65s linear;
     visibility: visible;
@@ -433,10 +434,11 @@ label[for="menu"].close {
     font-size: 40px;
   }
 
+
   #menu:checked~.main-header {
-    position: absolute;
+    position: fixed;
     top: 0px;
-    height: calc(100% - 40px);
+    height: calc(100% - 39px);
     opacity: 0.99;
   }
 

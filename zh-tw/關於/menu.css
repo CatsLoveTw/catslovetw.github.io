@@ -11,14 +11,7 @@
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     background-color: rgb(105, 105, 105);
-}
-
-#body {
-    padding-top: 20;
-    margin-top: -30;
-    padding-bottom: 27;
-    height: 100%;
-    background-color: rgb(83, 83, 83);
+    box-shadow: rgba(0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.17) 0px 12px 14px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .lists {
@@ -33,6 +26,23 @@
     border-radius: 8px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.17) 0px 12px 14px, rgba(0, 0, 0) 0px 0px 0px;
+}
+
+
+#body::after {
+    position: fixed;
+    top: 20;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    content: ''; 
+    padding-top: 20;
+    margin-top: -30;
+    padding-bottom: 27px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(83, 83, 83);
 }
 
 .lists ul li {

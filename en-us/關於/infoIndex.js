@@ -166,6 +166,36 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 // 取得更新
 function getUpdate() {
     const allUpdates = {
+        "V1.0.5": {
+            "V1.0.5_pre1": {
+                disable: true,
+                1: {
+                    "title": "調整",
+                    "website": "全部",
+                    "updates": ["初始選單樣暫時移除，全數改為新型選單。", "新型選單目前均已可覆蓋整個頁面，不會因滑動頁面而脫出畫面。"]
+                },
+                2: {
+                    "title": "美化",
+                    "website": "關於 全部",
+                    "updates": ["添加陰影效果"]
+                },
+                3: {
+                    "title": "修復",
+                    "website": "關於",
+                    "updates": ["修復使用新型選單時背景缺陷之問題"]
+                },
+                4: {
+                    "title": "更新",
+                    "website": "電量資訊",
+                    "updates": ["新增電量資訊之網頁 (現已可在選單中看到)"]
+                },
+                5: {
+                    "title": "更新",
+                    "website": "全部",
+                    "updates": ["新增離線判斷/提醒 (不確定是否有效)"]
+                }
+            }
+        },
         "V1.0.4": {
             "V1.0.4_pre1": {
                 disable: true,

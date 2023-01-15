@@ -1,0 +1,123 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.batteryMenu {
+    background-color: rgb(31, 31, 31);
+    /* background-color: bisque; */
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 20%);
+    width: 325px;
+    height: 350px;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 2px 30px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    text-align: right;
+    border-radius: 50px;
+}
+
+.lists {
+    color: white;
+    position: absolute;
+    display: block;
+    right: 20%;
+    width: 50%;
+    height: 100%;
+}
+
+.lists .battery h1::before {
+    content: "電量:";
+    font-size: 17px;
+    position: absolute;
+    transform: translateY(-20px);
+}
+
+.lists .battery h1 {
+    font-size: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    right: -20px;
+    top: 80px;
+}
+
+.lists .isCharging #isCharging {
+    font-size: 18px;
+    position: absolute;
+    right: 0px;
+    width: auto;
+    bottom: 85px;
+}
+
+.lists .isCharging #boltIcon {
+    color: greenyellow;
+    position: absolute;
+    right: -25;
+    bottom: 103px;
+}
+
+.lists .lowBat #LowBat {
+    font-size: 18px;
+    position: absolute;
+    right: 0px;
+    width: auto;
+    bottom: 85px;
+}
+
+.lists .lowBat #LowboltIcon {
+    color: red;
+    position: absolute;
+    right: -25;
+    bottom: 103px;
+}
+
+.batteryIcon {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 90%;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 50px;
+    bottom: 20;
+    left: 10px;
+    z-index: 4;
+}
+
+
+.batteryIcon .batterylist {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    bottom: 0;
+    border: 0px solid transparent;
+    border-radius: 50px;
+    background-image: auto;
+    ;
+    z-index: 1;
+}
+
+.batteryIcon .batteryStart {
+    content: '';
+    position: absolute;
+    width: 100;
+    height: 1px;
+    top: -1;
+    left: 0;
+    border-radius: 50px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: rgb(31, 31, 31);
+    opacity: 0.8;
+    z-index: 3;
+}
+
+@keyframes chargeStart {
+    0% {
+        opacity: 0.97;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.97;
+    }
+}

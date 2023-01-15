@@ -1,7 +1,7 @@
 /**
  * 目前年分
  */
-const year = new Date().getFullYear();
+const year = 2023;
 
 console.log("now url:" + window.location.href)
 
@@ -60,6 +60,11 @@ const pages = {
           "path":"/zh-tw/光遇計算機/SkyCalc.html",
           "settitle":"光遇計算機",
           "title":"光遇計算機"
+        },
+        "電量資訊": {
+          "path":"/zh-tw/電池資訊/BatteryCheck.html",
+          "settitle":"電量資訊",
+          "title":"電量資訊"
         },
         "敬請期待...": {
           "path":"",
@@ -330,6 +335,19 @@ footer.outerHTML = `
 // }
 footer = document.getElementById("footer")
 footer.innerText = footer.innerText.replace("text", `©2022-${year} 此網站由貓咪建立`)
+window.addEventListener("offline", (e) => {
+  footer.style.backgroundColor = "#ff3737"
+  footer.style.fontSize = "14px"
+  footer.innerText = `您已經離線 / ©2022-${year} 此網站由貓咪建立`
+})
+window.addEventListener("online", (e) => {
+  footer.style.backgroundColor = "#adff2f"
+  footer.style.color = "black"
+  footer.innerHTML = "偵測到回復連線，正在嘗試重新加載..."
+  setInterval(() => {
+    location.reload()
+  }, 3500)
+})
 
 // 傳送門專用
 try {

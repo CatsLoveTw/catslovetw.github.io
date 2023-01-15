@@ -1,7 +1,7 @@
 /**
  * 目前年分
  */
-const year = new Date().getFullYear();
+const year = 2023
 
 console.log("now url:" + window.location.href)
 
@@ -180,7 +180,7 @@ footer.outerHTML = `
 </div>
 `
 footer = document.getElementById("footer")
-footer.innerText = footer.innerText.replace("text", `©${year} Website created by Cat`)
+footer.innerText = footer.innerText.replace("text", `©2022-${year} Website created by Cat`)
 
 
 // 傳送門專用
