@@ -321,8 +321,8 @@ function change (ID, my) {
                 getsliderBar.value = 3
                 leng.innerHTML = `密碼長度: 3`
             } else {
-                if (length > 15) {
-                    getsliderBar.value = 15
+                if (length > 200) {
+                    getsliderBar.value = 200
                 } else {
                     getsliderBar.value = length
                 }
