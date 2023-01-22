@@ -66,6 +66,11 @@ const pages = {
           "settitle":"電量資訊",
           "title":"電量資訊"
         },
+        "密碼產生器": {
+          "path":"/zh-tw/密碼製造/password.html",
+          "settitle":"創造屬於自己的密碼",
+          "title":"密碼產生器"
+        },
         "敬請期待...": {
           "path":"",
           "settitle":"敬請期待...",

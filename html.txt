@@ -9,7 +9,6 @@
         <allLang value="zh-tw"></allLang>
     </head>
     <body>
-        <input type="checkbox" id="navbarToggle" checked="checked">
         <header class="main-header">
           </header>
           <h1 class="title">"setTitle"</h1>

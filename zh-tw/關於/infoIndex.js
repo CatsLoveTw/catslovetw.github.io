@@ -1,6 +1,6 @@
-let Rdate = "2023/1/15"
-let Rtime = "17:36:46"
-let Version = "1.0.5_pre1"
+let Rdate = "2023/1/22"
+let Rtime = "17:18:19"
+let Version = "1.0.6_pre1"
 
 
 const date = new Date()
@@ -130,6 +130,15 @@ times.item(2).innerHTML = times.item(2).innerHTML.replace("[time]", nowtime)
 // 取得更新
 function getUpdate() {
     const allUpdates = {
+        "V1.0.6": {
+            "V1.0.6_pre1": {
+                1: {
+                    "title": "更新",
+                    "website": "密碼產生器",
+                    "updates": ["新增密碼產生器之頁面 (歡迎協助測試與回報)。"]
+                }
+            }
+        },
         "V1.0.5": {
             "V1.0.5_pre1": {
                 1: {
